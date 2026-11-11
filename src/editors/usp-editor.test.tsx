@@ -82,6 +82,13 @@ describe("UspEditor", () => {
     expect(h.latest().showIcons).toBe(false);
   });
 
+  it("schaltet den Builder-Modus ein", () => {
+    const h = setup(withItems());
+    fireEvent.click(screen.getByTestId("usp-builder-toggle"));
+
+    expect(h.latest().builder).toBe(true);
+  });
+
   it("legt einen Punkt an und füllt ihn", () => {
     const h = setup(emptyConfig());
     expect(screen.getByText(/Noch keine Punkte/)).toBeInTheDocument();

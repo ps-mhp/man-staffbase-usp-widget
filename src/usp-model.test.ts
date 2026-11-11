@@ -79,6 +79,7 @@ describe("Schreiben", () => {
       layout: "sidepanel" as const,
       accent: "grey" as const,
       showIcons: false,
+      builder: true,
       eyebrow: "Kundennutzen",
       heading: "Was bringt's dem Kunden?",
       items: [{ id: "a", title: "Aerodynamik", text: "Verbessert", icon: "checkmark" }],
@@ -92,6 +93,7 @@ describe("Schreiben", () => {
     const written = serializeConfigJson({ ...emptyConfig(), items: [{ id: "a", title: "X" }] });
 
     expect(written).not.toContain("showIcons");
+    expect(written).not.toContain("builder");
     expect(written).not.toContain("eyebrow");
     expect(written).not.toContain('"text"');
   });

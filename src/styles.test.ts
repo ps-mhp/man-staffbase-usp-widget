@@ -44,7 +44,7 @@ describe("Stylesheet der USP-Box", () => {
         return [readFileSync(path, "utf8")];
       });
     const names = (source: string, prefix: string): Set<string> =>
-      new Set([...source.matchAll(new RegExp(`${prefix}(man-usp(?:__|--)[a-z0-9-]+)`, "g"))].map(([, name]) => name!));
+      new Set([...source.matchAll(new RegExp(`${prefix}(man-usp(?:-builder)?(?:__|--)[a-z0-9-]+)`, "g"))].map(([, name]) => name!));
 
     const rendered = names(sources(__dirname).join("\n"), "");
     const orphans = [...names(css, "\\.")].filter((name) => !rendered.has(name));

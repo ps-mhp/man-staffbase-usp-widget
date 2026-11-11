@@ -440,3 +440,135 @@ $accents: (
     border-left: 0;
   }
 }
+
+// --- Builder-Modus ----------------------------------------------------------------
+// Eine Leiste über der Box (`usp-builder.tsx`). Sie ist Werkzeug, nicht
+// Inhalt: kleinere Schrift, neutrale Fläche, die Akzentfarbe gehört der Box.
+// Knöpfe und Texte gegen die Wirtsseite durchgesetzt — deren Themenblock
+// färbt jeden `button` und jedes `p` im Inhaltsbereich ein.
+.man-usp-builder {
+  display: grid;
+  gap: man("space-5");
+  font-family: man("font-body");
+}
+
+.man-usp-builder__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: man("space-3") man("space-5");
+  padding: man("space-3") man("space-4");
+  background: man("surface-sunken");
+  border: 1px solid man("border");
+}
+
+.man-usp-builder__group {
+  display: grid;
+  gap: man("space-1");
+  min-width: 0;
+}
+
+.man-usp-builder__legend {
+  @include man-outshine-host {
+    font-family: man("font-head") !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: man("text") !important;
+  }
+}
+
+.man-usp-builder__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: man("space-1");
+}
+
+.man-usp-builder__option {
+  @include man-outshine-host {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: man("space-2") !important;
+    min-height: 32px !important;
+    margin: 0 !important;
+    padding: 0 man("space-3") !important;
+    font-family: man("font-body") !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    color: man("text") !important;
+    background: man("surface") !important;
+    border: 1px solid man("border-input") !important;
+    border-radius: man("radius") !important;
+    box-shadow: none !important;
+    cursor: pointer;
+
+    &:hover {
+      background: man("slate-50") !important;
+    }
+
+    &[aria-pressed="true"] {
+      color: man("white") !important;
+      background: man("slate") !important;
+      border-color: man("slate") !important;
+    }
+
+    &:focus-visible {
+      outline: man("focus-width") solid man("focus-color") !important;
+      outline-offset: man("focus-offset") !important;
+    }
+  }
+}
+
+.man-usp-builder__swatch {
+  display: inline-block;
+  flex: none;
+  width: 12px;
+  height: 12px;
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.man-usp-builder__footer {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: man("space-2") man("space-4");
+}
+
+.man-usp-builder__note {
+  @include man-outshine-host {
+    margin: 0 !important;
+    font-family: man("font-body") !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: man("text-muted") !important;
+  }
+}
+
+.man-usp-builder__reset {
+  @include man-outshine-host {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: man("font-body") !important;
+    font-size: 13px !important;
+    color: man("link") !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    cursor: pointer;
+
+    &:hover {
+      color: man("link-hover") !important;
+    }
+
+    &:focus-visible {
+      outline: man("focus-width") solid man("focus-color") !important;
+      outline-offset: man("focus-offset") !important;
+    }
+  }
+}

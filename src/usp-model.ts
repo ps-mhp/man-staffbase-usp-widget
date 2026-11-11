@@ -78,6 +78,12 @@ export interface UspConfig {
   accent: UspAccent;
   /** Vorgabe `true`. */
   showIcons: boolean;
+  /**
+   * Builder-Modus: Leser:innen bekommen über der Box eine Leiste, mit der sie
+   * Gestaltung, Farbe und Symbole selbst umschalten. Die Wahl gilt nur für
+   * ihre Ansicht und wird nicht gespeichert. Vorgabe `false`.
+   */
+  builder: boolean;
   /** Die kleine Zeile über der Überschrift, z. B. „Kundennutzen“. */
   eyebrow?: string;
   heading: string;
@@ -88,6 +94,7 @@ export const emptyConfig = (): UspConfig => ({
   layout: DEFAULT_LAYOUT,
   accent: DEFAULT_ACCENT,
   showIcons: true,
+  builder: false,
   heading: "",
   items: [],
 });
@@ -143,6 +150,7 @@ export function parseConfigJson(json: string, options: ParseOptions = {}): UspCo
   if (USP_LAYOUTS.includes(parsed.layout as UspLayout)) config.layout = parsed.layout as UspLayout;
   if (USP_ACCENTS.includes(parsed.accent as UspAccent)) config.accent = parsed.accent as UspAccent;
   if (parsed.showIcons === false) config.showIcons = false;
+  if (parsed.builder === true) config.builder = true;
 
   const eyebrow = asText(parsed.eyebrow);
   if (eyebrow !== "") config.eyebrow = eyebrow;
@@ -180,6 +188,7 @@ export function parseConfig(raw: unknown, options: ParseOptions = {}): UspConfig
 export function serializeConfigJson(config: UspConfig): string {
   const out: Record<string, unknown> = { layout: config.layout, accent: config.accent };
   if (!config.showIcons) out.showIcons = false;
+  if (config.builder) out.builder = true;
   if (config.eyebrow !== undefined && config.eyebrow.trim() !== "") out.eyebrow = config.eyebrow;
   out.heading = config.heading;
   out.items = config.items.map((item) => {

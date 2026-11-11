@@ -34,29 +34,12 @@ import {
   MAX_USP_ITEMS,
   USP_ACCENTS,
   USP_LAYOUTS,
-  UspAccent,
   UspConfig,
   UspItem,
-  UspLayout,
   emptyItem,
 } from "../usp-model";
+import { ACCENT_LABELS, LAYOUT_LABELS } from "../labels";
 import { IconPicker } from "./icon-picker";
-
-export const LAYOUT_LABELS: Record<UspLayout, { title: string; hint: string }> = {
-  split: { title: "Zweispaltig", hint: "Frage links, Antworten rechts untereinander" },
-  tiles: { title: "Kacheln", hint: "Je Punkt eine Kachel mit Akzentkante" },
-  checklist: { title: "Häkchen auf Fläche", hint: "Getönte Fläche, Häkchen in Akzentfarbe" },
-  linebar: { title: "Linienleiste", hint: "Titel mit Akzentlinie, Punkte in einer Zeile" },
-  sidepanel: { title: "Farbspalte", hint: "Frage auf Farbfläche, Antworten rechts" },
-  band: { title: "Farbband", hint: "Titel als Farbband, Punkte darunter nebeneinander" },
-  headbar: { title: "Fragekopf mit Leiste", hint: "Frage links, Punkte als Leiste daneben" },
-};
-
-export const ACCENT_LABELS: Record<UspAccent, { title: string; swatch: string }> = {
-  red: { title: "Rot", swatch: "#e40045" },
-  grey: { title: "Grau", swatch: "#303c49" },
-  blue: { title: "Blau", swatch: "#3875b2" },
-};
 
 /** Verschiebt einen Punkt um eine Stelle; außerhalb der Liste bleibt alles, wie es ist. */
 export function moveItem(items: UspItem[], from: number, by: -1 | 1): UspItem[] {
@@ -228,6 +211,22 @@ export function UspEditor({ value, onChange, onSave, onClose, dirty }: UspEditor
               onCheckedChange={(checked) => patch({ showIcons: checked })}
             />
             <Label htmlFor="usp-show-icons">Symbole zeigen</Label>
+          </div>
+
+          <div className="grid gap-1">
+            <div className="flex items-center gap-3">
+              <Switch
+                id="usp-builder"
+                data-testid="usp-builder-toggle"
+                checked={value.builder}
+                onCheckedChange={(checked) => patch({ builder: checked })}
+              />
+              <Label htmlFor="usp-builder">Builder-Modus</Label>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Zeigt über der Box eine Leiste, mit der Leser:innen Gestaltung, Farbe und Symbole selbst umschalten.
+              Ihre Wahl wird nicht gespeichert.
+            </p>
           </div>
 
           <section className="grid gap-3" aria-labelledby="usp-text-label">

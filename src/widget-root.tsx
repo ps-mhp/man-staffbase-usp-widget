@@ -14,6 +14,7 @@
 import React, { useMemo } from "react";
 
 import { UspBox } from "./usp";
+import { UspBuilder } from "./usp-builder";
 import { parseConfig } from "./usp-model";
 
 export interface UspWidgetProps {
@@ -24,5 +25,8 @@ export interface UspWidgetProps {
 /** Was der Baustein rendert; eigene Datei, damit Tests `index.tsx` samt `defineBlock` nicht laden müssen. */
 export function UspWidget({ config }: UspWidgetProps): React.ReactElement | null {
   const parsed = useMemo(() => parseConfig(config), [config]);
+  // Der Schlüssel setzt die Leiste zurück, sobald die Redaktion speichert:
+  // sonst zeigte sie weiter die Wahl zur alten Konfiguration.
+  if (parsed.builder) return <UspBuilder key={String(config)} config={parsed} />;
   return <UspBox config={parsed} />;
 }
