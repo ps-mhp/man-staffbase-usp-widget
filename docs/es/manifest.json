@@ -1,0 +1,27 @@
+{
+  "title": "Caja de USP",
+  "summary": "Resume las ventajas de un producto en una caja diseñada: siete formas, tres colores de la identidad corporativa y los símbolos de MAN.",
+  "icon": "✅",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Resumen",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Paso a paso",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Configuración",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "Preguntas frecuentes",
+      "file": "faq.md"
+    }
+  ]
+}

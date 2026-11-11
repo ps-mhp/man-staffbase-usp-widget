@@ -1,0 +1,27 @@
+{
+  "title": "USP-doos",
+  "summary": "Vat de voordelen van een product samen in een vormgegeven kader — zeven vormen, drie huisstijlkleuren, MAN-symbolen.",
+  "icon": "✅",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Overzicht",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Stap voor stap",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Instellingen",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "Veelgestelde vragen",
+      "file": "faq.md"
+    }
+  ]
+}

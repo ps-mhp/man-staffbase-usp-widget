@@ -1,0 +1,27 @@
+{
+  "title": "Boîte USP",
+  "summary": "Résume les avantages d'un produit dans un encadré stylisé : sept formes, trois couleurs de l'identité visuelle, les symboles MAN.",
+  "icon": "✅",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Aperçu",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Étape par étape",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Paramètres",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "file": "faq.md"
+    }
+  ]
+}

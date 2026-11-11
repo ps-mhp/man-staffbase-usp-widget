@@ -1,0 +1,27 @@
+{
+  "title": "USP Box",
+  "summary": "Summarizes the benefits of a product in a designed box—seven shapes, three corporate identity colors, MAN symbols.",
+  "icon": "✅",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Step by step",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "file": "faq.md"
+    }
+  ]
+}
