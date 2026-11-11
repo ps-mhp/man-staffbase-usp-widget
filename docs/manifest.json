@@ -1,0 +1,27 @@
+{
+  "title": "USP-Box",
+  "summary": "Fasst die Vorteile eines Produkts in einer gestalteten Box zusammen — sieben Formen, drei CI-Farben, MAN-Symbole.",
+  "icon": "✅",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "Übersicht",
+      "file": "overview.md"
+    },
+    {
+      "id": "usage",
+      "title": "Schritt für Schritt",
+      "file": "usage.md"
+    },
+    {
+      "id": "settings",
+      "title": "Einstellungen",
+      "file": "settings.md"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "file": "faq.md"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@man/usp-widget",
+  "version": "0.0.0",
+  "description": "Staffbase-Widget: USP-Box mit sieben Gestaltungen, CI-Akzentfarben und MAN-Symbolen",
+  "author": "",
+  "license": "ISC",
+  "staffbase": {
+    "element": "usp-widget",
+    "bundle": "dist/usp-widget.js"
+  }
+}

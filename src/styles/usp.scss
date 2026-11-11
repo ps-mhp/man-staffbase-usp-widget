@@ -1,0 +1,442 @@
+/*!
+ * Copyright 2026, MHP Management und IT-Beratung GmbH and contributors.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use "sass:list";
+@use "@shared/stylings/man-tokens" as *;
+
+// Aufbau: Die Box hat ein Markup für alle Gestaltungen (`usp.tsx`). Jede
+// Gestaltung setzt nur Raster und eine Handvoll Variablen (`--usp-*`); die
+// Elemente lesen die Variablen. So stehen Farben und Abstände der Elemente
+// genau einmal da — und genau dort, wo sie gegen die Wirtsseite durchgesetzt
+// werden müssen (`man-outshine-host`): Staffbase färbt `p`, `h3` und `li` im
+// Inhaltsbereich mit `!important` und hoher Spezifität ein.
+
+// --- Akzentfarben ------------------------------------------------------------
+// Rot und Anthrazit sind die Craft-Marke. Blau ist das Craft-Fokusblau
+// (#3875B2, 4,7:1 gegen Weiss), dunkel dazu `info-ink`; die helle Fläche
+// #E3EEF8 ist aus beiden abgeleitet — Craft führt kein blasses Blau, und
+// `info` (#BFDDF1) ist für eine ganze Fläche zu kräftig.
+$accents: (
+  "red": (man("red"), man("red-hover"), man("red-50")),
+  "grey": (man("slate"), man("slate-700"), man("slate-50")),
+  "blue": (#3875b2, man("info-ink"), #e3eef8),
+);
+
+.man-usp {
+  --usp-accent: #{man("red")};
+  --usp-accent-strong: #{man("red-hover")};
+  --usp-accent-soft: #{man("red-50")};
+
+  // Was die Elemente lesen; die Gestaltungen setzen davon nur, was abweicht.
+  --usp-heading-color: #{man("text")};
+  --usp-heading-size: 28px;
+  --usp-eyebrow-color: var(--usp-accent-strong);
+  --usp-title-color: #{man("text")};
+  --usp-text-color: #{man("text-muted")};
+  --usp-icon-color: var(--usp-accent);
+  --usp-item-padding: 0;
+  --usp-list-padding: 0;
+  --usp-item-direction: row;
+  --usp-item-align: flex-start;
+  --usp-title-size: 18px;
+  --usp-icon-size: 24px;
+
+  box-sizing: border-box;
+  width: 100%;
+  font-family: man("font-body");
+  font-size: 16px;
+  line-height: 1.5;
+  color: man("text");
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+@each $name, $colors in $accents {
+  .man-usp[data-accent="#{$name}"] {
+    --usp-accent: #{list.nth($colors, 1)};
+    --usp-accent-strong: #{list.nth($colors, 2)};
+    --usp-accent-soft: #{list.nth($colors, 3)};
+  }
+}
+
+// Auf Anthrazit wäre die Zeile darüber in Anthrazit-dunkel kaum vom Text zu
+// unterscheiden; gedämpft liest sie sich als Etikett. Gestaltungen mit
+// farbigem Kopf setzen sie unten wieder auf Weiss — mit `[data-accent]`,
+// damit sie diese Regel an Spezifität einholen und als spätere gewinnen.
+.man-usp[data-accent="grey"] {
+  --usp-eyebrow-color: #{man("text-muted")};
+}
+
+// --- Elemente, gegen die Wirtsseite durchgesetzt -------------------------------
+.man-usp__head {
+  display: grid;
+  gap: man("space-1");
+  min-width: 0;
+}
+
+.man-usp__eyebrow {
+  @include man-outshine-host {
+    margin: 0 !important;
+    font-family: man("font-body") !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--usp-eyebrow-color) !important;
+  }
+}
+
+.man-usp__heading {
+  @include man-outshine-host {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: man("font-head") !important;
+    font-size: var(--usp-heading-size) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    color: var(--usp-heading-color) !important;
+    text-wrap: balance;
+  }
+}
+
+.man-usp__list {
+  @include man-outshine-host {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: var(--usp-list-padding) !important;
+  }
+}
+
+.man-usp__item {
+  @include man-outshine-host {
+    display: flex !important;
+    flex-direction: var(--usp-item-direction) !important;
+    gap: man("space-3") !important;
+    align-items: var(--usp-item-align) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--usp-item-padding) !important;
+    list-style: none !important;
+
+    &::before,
+    &::marker {
+      content: none !important;
+    }
+  }
+}
+
+.man-usp__point {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.man-usp__title {
+  @include man-outshine-host {
+    font-family: man("font-head") !important;
+    font-size: var(--usp-title-size) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--usp-title-color) !important;
+  }
+}
+
+.man-usp__text {
+  @include man-outshine-host {
+    font-family: man("font-body") !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    color: var(--usp-text-color) !important;
+  }
+}
+
+.man-usp__mark {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+// Erst die Schrift des Themes, dann die eingebettete Kopie (`icon-font.ts`).
+.man-usp__icon {
+  @include man-outshine-host {
+    font-family: "man-icon", "man-usp-icon" !important;
+    font-size: var(--usp-icon-size) !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: var(--usp-icon-color) !important;
+    speak: never;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// --- Gestaltungen ---------------------------------------------------------------
+
+// Zweispaltig: Frage links, Antworten rechts untereinander mit Haarlinien.
+.man-usp--split {
+  --usp-heading-size: 32px;
+  --usp-item-padding: #{man("space-4")} 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: man("space-6");
+  align-items: start;
+  padding-top: man("space-5");
+  border-top: 1px solid man("border-strong");
+
+  .man-usp__item {
+    border-bottom: 1px solid man("border");
+  }
+
+  .man-usp__item:first-child {
+    --usp-item-padding: 0 0 #{man("space-4")};
+  }
+}
+
+// Kacheln mit Akzentkante oben.
+.man-usp--tiles {
+  --usp-item-padding: #{man("space-5")};
+  --usp-item-direction: column;
+  --usp-title-size: 20px;
+  --usp-icon-size: 32px;
+
+  display: grid;
+  gap: man("space-5");
+
+  .man-usp__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: man("space-4");
+  }
+
+  .man-usp__item {
+    border: 1px solid man("border");
+    border-top: 4px solid var(--usp-accent);
+  }
+
+  .man-usp__mark {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// Getönte Fläche mit Häkchen in Akzentquadraten.
+.man-usp--checklist {
+  --usp-icon-color: #{man("white")};
+  --usp-icon-size: 18px;
+  --usp-eyebrow-color: #{man("text")};
+
+  display: grid;
+  gap: man("space-5");
+  padding: man("space-6");
+  background: var(--usp-accent-soft);
+
+  .man-usp__list {
+    display: grid;
+    gap: man("space-3");
+  }
+
+  .man-usp__mark {
+    width: 28px;
+    height: 28px;
+    background: var(--usp-accent);
+  }
+
+  .man-usp__point {
+    display: block;
+    padding-top: 2px;
+  }
+
+  // Stichwort und Erläuterung laufen hier als ein Satz.
+  .man-usp__title + .man-usp__text::before {
+    content: " ";
+  }
+}
+
+// Linienleiste: Titel mit Akzentlinie, Punkte in einer Zeile.
+.man-usp--linebar {
+  --usp-heading-size: 20px;
+  --usp-item-padding: #{man("space-1")} #{man("space-5")};
+  --usp-item-align: center;
+  --usp-title-size: 16px;
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  .man-usp__head {
+    align-content: center;
+    max-width: 220px;
+    padding: man("space-1") man("space-5") man("space-1") 0;
+    border-right: 3px solid var(--usp-accent);
+  }
+
+  .man-usp__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .man-usp__item + .man-usp__item {
+    border-left: 1px solid man("border");
+  }
+}
+
+// Farbspalte mit Frage, Antworten rechts untereinander.
+.man-usp--sidepanel {
+  --usp-heading-size: 30px;
+  --usp-heading-color: #{man("white")};
+  --usp-item-padding: #{man("space-4")} 0;
+  --usp-list-padding: #{man("space-2")} #{man("space-6")};
+
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  border: 1px solid man("border");
+
+  .man-usp__head {
+    align-content: space-between;
+    gap: man("space-5");
+    padding: man("space-6");
+    background: var(--usp-accent);
+  }
+
+  .man-usp__item + .man-usp__item {
+    border-top: 1px solid man("border");
+  }
+}
+
+// Farbband oben, Punkte darunter nebeneinander.
+.man-usp--band {
+  --usp-heading-size: 22px;
+  --usp-heading-color: #{man("white")};
+  --usp-item-padding: #{man("space-5")};
+
+  border: 1px solid man("border");
+
+  .man-usp__head {
+    padding: man("space-3") man("space-5");
+    background: var(--usp-accent);
+  }
+
+  .man-usp__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .man-usp__item + .man-usp__item {
+    border-left: 1px solid man("border");
+  }
+}
+
+// Frage links, Punkte als Leiste daneben, Akzentlinie oben.
+.man-usp--headbar {
+  --usp-heading-size: 24px;
+  --usp-item-padding: #{man("space-5")};
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  border-top: 2px solid var(--usp-accent);
+  border-bottom: 1px solid man("border");
+
+  .man-usp__head {
+    align-content: start;
+    padding: man("space-5") man("space-5") man("space-5") 0;
+  }
+
+  .man-usp__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .man-usp__item {
+    border-left: 1px solid man("border");
+  }
+}
+
+.man-usp--sidepanel[data-accent],
+.man-usp--band[data-accent] {
+  --usp-eyebrow-color: #{man("white")};
+}
+
+// --- Telefon --------------------------------------------------------------------
+// Alles Zweispaltige stapelt, alle Leisten werden zu Listen mit Linien
+// dazwischen statt daneben.
+@media (max-width: 767px) {
+  .man-usp {
+    --usp-heading-size: 24px;
+  }
+
+  .man-usp--split,
+  .man-usp--sidepanel,
+  .man-usp--linebar,
+  .man-usp--headbar {
+    grid-template-columns: 1fr;
+  }
+
+  .man-usp--split {
+    gap: man("space-4");
+  }
+
+  .man-usp--checklist,
+  .man-usp--sidepanel .man-usp__head {
+    padding: man("space-5");
+  }
+
+  .man-usp--sidepanel {
+    --usp-list-padding: #{man("space-1")} #{man("space-5")};
+  }
+
+  .man-usp--linebar .man-usp__head {
+    max-width: none;
+    padding: 0 0 man("space-3");
+    border-right: 0;
+    border-bottom: 3px solid var(--usp-accent);
+  }
+
+  .man-usp--headbar .man-usp__head {
+    padding: man("space-4") 0 man("space-3");
+  }
+
+  .man-usp--linebar,
+  .man-usp--headbar,
+  .man-usp--band {
+    --usp-item-padding: #{man("space-3")} 0;
+  }
+
+  .man-usp--band {
+    --usp-item-padding: #{man("space-3")} #{man("space-5")};
+  }
+
+  .man-usp--linebar .man-usp__list,
+  .man-usp--headbar .man-usp__list,
+  .man-usp--band .man-usp__list {
+    grid-template-columns: 1fr;
+  }
+
+  .man-usp--linebar .man-usp__item + .man-usp__item,
+  .man-usp--band .man-usp__item + .man-usp__item,
+  .man-usp--headbar .man-usp__item + .man-usp__item {
+    border-left: 0;
+    border-top: 1px solid man("border");
+  }
+
+  .man-usp--headbar .man-usp__item {
+    border-left: 0;
+  }
+}
