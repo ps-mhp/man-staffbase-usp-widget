@@ -11,6 +11,13 @@ Antwort: Die MAN-Symbolschrift kommt aus dem Theme der Instanz; die Box bringt
 eine Kopie mit, falls es fehlt. Laden Sie die Seite neu. Bleibt das Kästchen,
 melden Sie es mit Seite und Symbolname.
 
+**Frage:** Ich habe im Builder eine Gestaltung gewählt, nach dem Neuladen ist
+sie weg.
+
+Antwort: Der Builder ist eine Vorschau für Leser:innen und speichert nichts.
+Um die Box dauerhaft umzustellen, öffnen Sie sie im Editor und wählen dort
+Gestaltung und Farbe.
+
 **Frage:** Werden die Texte mit übersetzt?
 
 Antwort: Ja. Überschrift, Zeile darüber, Stichworte und Erläuterungen laufen

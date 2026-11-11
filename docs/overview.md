@@ -14,6 +14,11 @@ Symbole. Auf dem Telefon stapeln sich alle Gestaltungen zu einer Spalte.
 
 Ohne Punkte erscheint die Box nicht.
 
+Im **Builder-Modus** steht über der Box eine Leiste mit Gestaltung, Farbe und
+Symbolen. Leser:innen schalten damit selbst um und sehen das Ergebnis sofort —
+gedacht für Seiten, auf denen die Box vorgestellt oder abgestimmt wird.
+Gespeichert wird dabei nichts.
+
 ## Was Sie im CMS-Editor sehen
 
 Der Editor zeigt rechts eine Vorschau der Box. Sie entspricht der Seite; nur
