@@ -12,9 +12,14 @@ marcas de verificación sobre un área, barra de líneas, columna de color, band
 barra. El **color de acento** (rojo, gris o azul) colorea las líneas, las áreas y
 los símbolos. En el móvil, todos los diseños se apilan en una sola columna.
 
-Si no hay puntos, el recuadro no aparece.
+Sin puntos, el recuadro no aparece.
+
+En el **modo Builder**, encima del recuadro hay una barra con el diseño, el color y
+los símbolos. Los lectores pueden cambiar la configuración ellos mismos y ver el resultado al instante —
+pensado para páginas en las que se presenta o se personaliza el recuadro.
+No se guarda nada.
 
 ## Lo que ves en el editor del CMS
 
 El editor muestra a la derecha una vista previa del recuadro. Se corresponde con la página; solo
-el ancho depende del cuadro de diálogo.
+el ancho depende del diálogo.

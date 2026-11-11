@@ -9,5 +9,5 @@
    ocho; lo ideal es que haya entre tres y cuatro).
 5. Opcional: **Seleccionar símbolo** abre la lista de símbolos de MAN. La búsqueda
    encuentra nombres en alemán, p. ej., «Lkw» o «Kalender».
-6. Ordene los puntos con ↑ y ↓.
-7. Haga clic en **Aplicar** y guarde la página.
+6. Ordena los puntos con ↑ y ↓.
+7. Haz clic en **Aplicar** y guarda la página.

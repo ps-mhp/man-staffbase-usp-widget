@@ -8,13 +8,18 @@ symbolem z zestawu symboli MAN.
 ## Co widzą czytelnicy
 
 W zależności od wybranego **układu** jedna z siedmiu form: dwukolumnowa, kafelkowa,
-haczyki na tle, pasek z liniami, kolorowa kolumna, kolorowa taśma lub nagłówek z pytaniem i
+haczyki na polu, pasek liniowy, kolumna kolorowa, pasek kolorowy lub nagłówek z pytaniem i
 paskiem. **Kolor akcentujący** (czerwony, szary lub niebieski) nadaje barwę liniom, polom i
 symbolom. Na telefonie wszystkie układy są ułożone w jedną kolumnę.
 
 Bez punktów ramka nie jest wyświetlana.
 
-## Co widzisz w edytorze CMS
+W **trybie kreatora** nad ramką znajduje się pasek z opcjami układu, koloru i
+symboli. Czytelnicy mogą samodzielnie przełączać między opcjami i natychmiast widzą wynik —
+przeznaczone dla stron, na których ramka jest prezentowana lub dostosowywana.
+Nic nie jest przy tym zapisywane.
 
-Edytor wyświetla po prawej stronie podgląd ramki. Odpowiada ona stronie; jedynie
+## Co widać w edytorze CMS
+
+Edytor wyświetla po prawej stronie podgląd ramki. Odpowiada on stronie; jedynie
 szerokość zależy od okna dialogowego.

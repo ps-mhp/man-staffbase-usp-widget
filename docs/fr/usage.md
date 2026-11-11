@@ -8,6 +8,6 @@
    si vous le souhaitez, une **explication**. Répétez l’opération pour chaque avantage (jusqu’à
    huit ; trois ou quatre sont idéaux).
 5. Facultatif : **Sélectionner une icône** ouvre la liste des icônes MAN. La recherche
-   renvoie des noms en allemand, par exemple « Lkw » ou « Calendrier ».
+   trouve les noms en allemand, par exemple « Lkw » ou « Calendrier ».
 6. Réorganisez les points à l’aide des flèches ↑ et ↓.
 7. Cliquez sur **Appliquer** et enregistrez la page.

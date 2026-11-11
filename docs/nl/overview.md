@@ -14,6 +14,11 @@ symbolen. Op de telefoon worden alle ontwerpen gestapeld tot één kolom.
 
 Zonder punten wordt het vak niet weergegeven.
 
+In de **Builder-modus** staat boven het vak een balk met lay-out, kleur en
+symbolen. Lezers kunnen hiermee zelf schakelen en zien het resultaat direct —
+bedoeld voor pagina’s waarop het vak wordt gepresenteerd of aangepast.
+Er wordt daarbij niets opgeslagen.
+
 ## Wat u in de CMS-editor ziet
 
 De editor toont rechts een voorbeeld van het vak. Dit komt overeen met de pagina; alleen
