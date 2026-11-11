@@ -34,7 +34,7 @@ import pkg from "../package.json";
 const widgetAttributes: string[] = [CONFIG_ATTRIBUTE];
 
 const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
-  /** <usp-widget config="b64:…"></usp-widget> */
+  /** <usp-widget usp-config="b64:…"></usp-widget> */
   return class UspWidgetBlock extends BaseBlockClass implements BaseBlock {
     private _root: ReactDOM.Root | null = null;
 

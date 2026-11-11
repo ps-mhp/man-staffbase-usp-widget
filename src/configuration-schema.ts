@@ -14,8 +14,17 @@
 import { UiSchema } from "@rjsf/utils";
 import { JSONSchema7 } from "json-schema";
 
-/** Das eine Attribut der Box: Gestaltung, Farbe, Kopf und Punkte (siehe `usp-model.ts`). */
-export const CONFIG_ATTRIBUTE = "config";
+/**
+ * Das eine Attribut der Box: Gestaltung, Farbe, Kopf und Punkte (siehe
+ * `usp-model.ts`).
+ *
+ * Bewusst nicht `config`: Staffbase gibt jedem Dialogfeld die Kennung
+ * `root_<Attribut>`, und die Editoren hängen sich über genau diese Kennung
+ * ein — ohne zu wissen, zu welchem Widget der Dialog gehört. Das
+ * Hotspot-Widget heißt sein Attribut schon `config`; mit demselben Namen
+ * öffnete im Dialog der USP-Box dessen Editor und umgekehrt (0.1.0-rc.1).
+ */
+export const CONFIG_ATTRIBUTE = "usp-config";
 
 /**
  * Das Schema des Konfigurationsdialogs.

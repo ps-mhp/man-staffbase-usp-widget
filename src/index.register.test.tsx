@@ -24,7 +24,7 @@ interface Host {
 }
 
 describe("Anmeldung des Widgets", () => {
-  it("meldet den Baustein mit dem Attribut config an", async () => {
+  it("meldet den Baustein mit dem Attribut usp-config an", async () => {
     const host = window as unknown as Host;
     host.defineBlock = jest.fn();
 
@@ -41,9 +41,27 @@ describe("Anmeldung des Widgets", () => {
         blockDefinition: expect.objectContaining({
           name: "usp-widget",
           label: "USP-Box",
-          attributes: ["config"],
+          attributes: ["usp-config"],
         }),
       }),
     );
+  });
+});
+
+describe("Attributname", () => {
+  it("teilt seinen Feldnamen mit keinem anderen Widget", async () => {
+    // Die Editoren finden ihr Feld über `root_<Attribut>`, ohne das Widget zu
+    // kennen. Ein geteilter Name ließe fremde Editoren in diesen Dialog.
+    const { readdirSync, readFileSync, existsSync } = await import("fs");
+    const { join } = await import("path");
+    const { CONFIG_ATTRIBUTE } = await import("./configuration-schema");
+    const widgetsRoot = join(__dirname, "..", "..");
+    const others = readdirSync(widgetsRoot).filter((name) => name !== "usp-widget");
+    const clashes = others.filter((name) => {
+      const schema = join(widgetsRoot, name, "src", "configuration-schema.ts");
+      return existsSync(schema) && new RegExp(`["'\`]${CONFIG_ATTRIBUTE}["'\`]`).test(readFileSync(schema, "utf8"));
+    });
+
+    expect(clashes).toEqual([]);
   });
 });
