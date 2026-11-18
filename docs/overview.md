@@ -21,5 +21,8 @@ Gespeichert wird dabei nichts.
 
 ## Was Sie im CMS-Editor sehen
 
-Der Editor zeigt rechts eine Vorschau der Box. Sie entspricht der Seite; nur
-die Breite hängt vom Dialog ab.
+Der Editor öffnet im Vollbild: links die **Punkte**, in der Mitte die Felder
+des gewählten Punkts (Text und Icon), rechts das Panel **USP-Box** mit den
+Reitern **Inhalt**, **Gestaltung** und **Verhalten**. Über **Desktop**,
+**Tablet** und **Mobil** im Kopf zeigt der Editor die Box so, wie sie auf der
+Seite steht; nur die Breite hängt vom Bildschirm ab.
