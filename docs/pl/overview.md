@@ -12,14 +12,17 @@ haczyki na polu, pasek liniowy, kolumna kolorowa, pasek kolorowy lub nagłówek 
 paskiem. **Kolor akcentujący** (czerwony, szary lub niebieski) nadaje barwę liniom, polom i
 symbolom. Na telefonie wszystkie układy są ułożone w jedną kolumnę.
 
-Bez punktów ramka nie jest wyświetlana.
+Bez punktów ramka nie pojawia się.
 
-W **trybie kreatora** nad ramką znajduje się pasek z opcjami układu, koloru i
+W **trybie edytora** nad ramką znajduje się pasek z opcjami układu, koloru i
 symboli. Czytelnicy mogą samodzielnie przełączać między opcjami i natychmiast widzą wynik —
 przeznaczone dla stron, na których ramka jest prezentowana lub dostosowywana.
 Nic nie jest przy tym zapisywane.
 
-## Co widać w edytorze CMS
+## Co widzisz w edytorze CMS
 
-Edytor wyświetla po prawej stronie podgląd ramki. Odpowiada on stronie; jedynie
-szerokość zależy od okna dialogowego.
+Edytor otwiera się w trybie pełnoekranowym: po lewej stronie znajdują się **punkty**, pośrodku pola
+wybranego punktu (tekst i ikona), a po prawej panel **Pole USP** z
+zakładkami **Treść**, **Projekt** i **Zachowanie**. Dzięki opcjom **Komputer stacjonarny**,
+**Tablet** i **Telefon komórkowy** w nagłówku edytor wyświetla okienko tak, jak wygląda ono na
+stronie; jedynie szerokość zależy od rozmiaru ekranu.

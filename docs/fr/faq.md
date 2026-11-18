@@ -11,7 +11,7 @@ Réponse : La police des icônes MAN provient du thème de l'instance ; l'encadr
 apporte une copie si elle vient à manquer. Actualisez la page. Si la case vide persiste,
 signalez-le en indiquant la page et le nom de l'icône.
 
-**Question :** J’ai choisi une mise en page dans le Builder, mais après le rechargement,
+**Question :** J’ai choisi une mise en page dans le Builder, mais après le rafraîchissement,
 elle a disparu.
 
 Réponse : Le Builder est un aperçu destiné aux lecteurs et ne sauvegarde rien.

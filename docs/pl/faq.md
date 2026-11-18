@@ -1,11 +1,11 @@
 # FAQ
 
-**Pytanie:** Ramka nie wyświetla się na stronie.
+**Pytanie:** Ramka nie pojawia się na stronie.
 
-Odpowiedź: Potrzebny jest co najmniej jeden punkt zawierający słowo kluczowe lub wyjaśnienie.
+Odpowiedź: Potrzebuje co najmniej jednego punktu zawierającego słowo kluczowe lub wyjaśnienie.
 Sam nagłówek nie jest wyświetlany.
 
-**Pytanie:** Zamiast symbolu pojawia się puste pole.
+**Pytanie:** Zamiast symbolu widnieje puste pole.
 
 Odpowiedź: Czcionka symboli MAN pochodzi z motywu instancji; ramka zawiera
 jej kopię na wypadek, gdyby jej brakowało. Odśwież stronę. Jeśli puste pole nadal się pojawia,

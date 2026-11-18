@@ -1,7 +1,7 @@
 # USP-Box
 
 L'USP-Box riassume i vantaggi di un prodotto o di un'offerta in pochi punti:
-una domanda del tipo “Quali sono i vantaggi per il cliente?” e sotto o accanto
+una domanda del tipo “Quali sono i benefici per il cliente?” e sotto o accanto
 le risposte, ciascuna sotto forma di parola chiave con una breve spiegazione e, se lo si desidera, con
 un simbolo tratto dal sistema di simboli MAN.
 
@@ -15,11 +15,14 @@ simboli. Sul telefono, tutte le impaginazioni si impilano in un’unica colonna.
 Senza punti, il riquadro non viene visualizzato.
 
 Nella **modalità Builder**, sopra il riquadro è presente una barra con layout, colore e
-simboli. I lettori possono così cambiare le impostazioni autonomamente e vedere immediatamente il risultato —
-pensata per le pagine in cui il riquadro viene presentato o personalizzato.
+simboli. I lettori possono così cambiare impostazione autonomamente e vedere immediatamente il risultato —
+pensato per le pagine in cui il riquadro viene presentato o personalizzato.
 In questo caso non viene salvato nulla.
 
 ## Cosa vedete nell’editor CMS
 
-L’editor mostra a destra un’anteprima del riquadro. Essa corrisponde alla pagina; solo
-la larghezza dipende dalla finestra di dialogo.
+L’editor si apre a schermo intero: a sinistra i **punti**, al centro i campi
+del punto selezionato (testo e icona), a destra il pannello **Casella USP** con le
+schede **Contenuto**, **Design** e **Comportamento**. Tramite le opzioni **Desktop**,
+**Tablet** e **Mobile** nella parte superiore, l’editor mostra il box esattamente come appare sulla
+pagina; solo la larghezza dipende dallo schermo.

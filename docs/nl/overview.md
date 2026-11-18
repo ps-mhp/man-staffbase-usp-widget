@@ -21,5 +21,8 @@ Er wordt daarbij niets opgeslagen.
 
 ## Wat u in de CMS-editor ziet
 
-De editor toont rechts een voorbeeld van het vak. Dit komt overeen met de pagina; alleen
-de breedte is afhankelijk van het dialoogvenster.
+De editor opent in volledig scherm: links de **punten**, in het midden de velden
+van het geselecteerde punt (tekst en pictogram), rechts het paneel **USP-box** met de
+tabbladen **Inhoud**, **Ontwerp** en **Gedrag**. Via **Desktop**,
+**Tablet** en **Mobiel** bovenaan toont de editor de box zoals deze op de
+pagina staat; alleen de breedte is afhankelijk van het scherm.

@@ -1,9 +1,9 @@
-# Encadré « USP »
+# Encadré USP
 
-L'encadré « USP » résume les avantages d'un produit ou d'une offre en quelques points
+L'encadré USP résume les avantages d'un produit ou d'une offre en quelques points
 : une question telle que « Quels sont les avantages pour le client ? » et, en dessous ou à côté,
 les réponses, sous forme de mots-clés accompagnés d’une brève explication et, si souhaité, d’
-un symbole issu de la bibliothèque de symboles MAN.
+un symbole issu de la palette de symboles MAN.
 
 ## Ce que voient les lectrices et lecteurs
 
@@ -14,12 +14,15 @@ les symboles. Sur un téléphone, toutes les mises en page s’empilent pour for
 
 Sans points, la boîte n’apparaît pas.
 
-En **mode éditeur**, une barre situant au-dessus de la boîte permet de choisir la mise en page, la couleur et
+En **mode Builder**, une barre situées au-dessus de la boîte permet de choisir la mise en page, la couleur et
 les symboles. Les lectrices et lecteurs peuvent ainsi changer eux-mêmes de configuration et voir immédiatement le résultat —
-cette fonctionnalité est destinée aux pages sur lesquelles la boîte est présentée ou personnalisée.
+conçu pour les pages où la boîte est présentée ou personnalisée.
 Rien n’est enregistré lors de cette opération.
 
 ## Ce que vous voyez dans l’éditeur CMS
 
-L’éditeur affiche à droite un aperçu de la boîte. Il correspond à la page ; seule
-la largeur dépend de la boîte de dialogue.
+L’éditeur s’ouvre en plein écran : à gauche, les **éléments** ; au centre, les champs
+de l’élément sélectionné (texte et icône) ; à droite, le panneau **Boîte USP** avec les
+onglets **Contenu**, **Mise en page** et **Comportement**. Grâce aux onglets **Ordinateur de bureau**,
+**Tablette** et **Mobile** en haut de l’écran, l’éditeur affiche la boîte telle qu’elle apparaît sur la
+page ; seule la largeur dépend de la taille de l’écran.

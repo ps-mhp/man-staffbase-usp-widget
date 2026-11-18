@@ -14,12 +14,15 @@ símbolos. No telemóvel, todos os layouts são empilhados numa única coluna.
 
 Sem pontos, a caixa não aparece.
 
-No **modo Construtor**, aparece uma barra acima da caixa com o layout, a cor e
+No **modo Builder**, aparece uma barra acima da caixa com o layout, a cor e
 os símbolos. Os leitores podem alternar entre as opções e ver o resultado imediatamente —
 concebido para páginas em que a caixa é apresentada ou ajustada.
 Nada é guardado neste processo.
 
 ## O que vê no editor do CMS
 
-O editor mostra, à direita, uma pré-visualização da caixa. Esta corresponde à página; apenas
-a largura depende da caixa de diálogo.
+O editor abre em ecrã inteiro: à esquerda, os **pontos**; no centro, os campos
+do ponto selecionado (texto e ícone); à direita, o painel **Caixa USP** com os
+separadores **Conteúdo**, **Design** e **Comportamento**. Através das opções **Desktop**,
+**Tablet** e **Móvel** na parte superior, o editor mostra a caixa tal como aparece na
+página; apenas a largura depende do ecrã.

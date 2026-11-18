@@ -8,7 +8,7 @@ Un título por sí solo no se muestra.
 **Pregunta:** En lugar de un símbolo, aparece un recuadro vacío.
 
 Respuesta: La fuente de los iconos MAN procede del tema de la instancia; el recuadro incluye
-una copia en caso de que falte. Actualiza la página. Si el recuadro sigue ahí,
+una copia en caso de que falte. Actualiza la página. Si el recuadro sigue apareciendo,
 notifícalo indicando la página y el nombre del icono.
 
 **Pregunta:** He elegido un diseño en el Builder, pero tras volver a cargar la página
@@ -21,4 +21,4 @@ el diseño y el color.
 **Pregunta:** ¿Se traducen también los textos?
 
 Respuesta: Sí. El título, la línea superior, las palabras clave y las explicaciones pasan
-por la traducción del contenido; el diseño, el color y los iconos permanecen igual.
+por la traducción del contenido; el diseño, el color y los iconos permanecen iguales.

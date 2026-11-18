@@ -14,12 +14,15 @@ symbols. On a phone, all layouts stack into a single column.
 
 Without points, the box does not appear.
 
-In **Builder mode**, a bar appears above the box with layout, color, and
+In **Builder Mode**, a bar appears above the box with layout, color, and
 symbols. Readers can use it to switch between options themselves and see the result immediately—
-intended for pages where the box is presented or customized.
+intended for pages where the box is introduced or customized.
 Nothing is saved during this process.
 
 ## What You See in the CMS Editor
 
-The editor displays a preview of the box on the right. It matches the page; only
-the width depends on the dialog.
+The editor opens in full-screen mode: on the left are the **items**, in the middle are the fields
+for the selected item (text and icon), and on the right is the **USP Box** panel with the
+tabs **Content**, **Design**, and **Behavior**. Using the **Desktop**,
+**Tablet**, and **Mobile** options at the top, the editor displays the box exactly as it appears on the
+page; only the width depends on the screen.
