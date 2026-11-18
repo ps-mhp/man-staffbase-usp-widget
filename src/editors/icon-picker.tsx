@@ -20,9 +20,9 @@
 
 import * as React from "react";
 import { ReactElement, useState } from "react";
-import { Search } from "lucide-react";
+import { SearchField } from "@man/config-ui/form/search-field";
 import { Button } from "@man/config-ui/primitives/button";
-import { Input } from "@man/config-ui/primitives/input";
+
 import { cn } from "@man/config-ui/primitives/utils";
 
 import { MAN_ICONS, ManIcon, findManIcon, manIconGlyph } from "../man-icons";
@@ -62,21 +62,14 @@ export function IconPicker({ value, onChange, testId }: IconPickerProps): ReactE
   return (
     <div className="flex flex-col gap-3" data-testid={testId}>
       <div className="flex max-w-[360px] items-center gap-2">
-        <div className="relative min-w-0 flex-1">
-          <Search
-            className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden
-          />
-          <Input
-            type="search"
-            className="pl-9"
-            placeholder="Icon suchen"
-            aria-label="Icon suchen"
-            data-testid={`${testId}-search`}
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-          />
-        </div>
+        <SearchField
+          className="min-w-0 flex-1"
+          aria-label="Icon suchen"
+          placeholder="Icon suchen"
+          data-testid={`${testId}-search`}
+          value={query}
+          onValueChange={setQuery}
+        />
         {current !== undefined && (
           <Button type="button" variant="ghost" size="sm" data-testid={`${testId}-clear`} onClick={() => onChange(undefined)}>
             Kein Icon
