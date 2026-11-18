@@ -13,8 +13,12 @@
 
 import * as React from "react";
 
-import { startFieldModalInjector } from "@shared/config-modal";
+import { BadgeCheck } from "lucide-react";
+
+import { FieldModalShellOptions, startFieldModalInjector } from "@shared/config-modal";
 import { CONFIG_ATTRIBUTE } from "./configuration-schema";
+import { USP_EDITOR_HELP } from "./usp-editor-help";
+import { uspChangesStatus, validateUsp } from "./usp-editor-status";
 import { UspConfig, encodeConfigAttribute, parseConfig } from "./usp-model";
 
 // Erst im Studio nachgeladen: der Editor gehört nicht ins Bündel, das jede
@@ -22,6 +26,23 @@ import { UspConfig, encodeConfigAttribute, parseConfig } from "./usp-model";
 const LazyUspEditor = React.lazy(() =>
   import("./editors/usp-editor").then((module) => ({ default: module.UspEditor })),
 );
+
+const LOADING = React.createElement(
+  "p",
+  { className: "p-6 text-sm text-muted-foreground" },
+  "Editor wird geladen …",
+);
+
+/** Was der gemeinsame Rahmen von der USP-Box wissen muss. Offengelegt für Tests. */
+export const uspEditorShell: FieldModalShellOptions<UspConfig> = {
+  widgetName: "USP-Box",
+  title: "Punkte bearbeiten",
+  icon: BadgeCheck,
+  preview: true,
+  help: USP_EDITOR_HELP,
+  statusText: uspChangesStatus,
+  validate: validateUsp,
+};
 
 /** Läuft die Seite im Studio — und nicht als veröffentlichte Seite? */
 export function isStudioPage(location: Location = window.location): boolean {
@@ -45,13 +66,9 @@ export function startUspEditorInjector(root: ParentNode = document): () => void 
     // Ein frisch angelegter Punkt ist leer; der strenge Leser verwürfe ihn.
     parse: (raw) => parseConfig(raw, { keepEmpty: true }),
     serialize: encodeConfigAttribute,
-    // Der Editor zeichnet seinen eigenen Rahmen und seine Fußleiste.
-    panelClassName: "p-0 overflow-hidden",
-    render: (props) =>
-      React.createElement(
-        React.Suspense,
-        { fallback: React.createElement("p", { className: "p-4" }, "Editor wird geladen …") },
-        React.createElement(LazyUspEditor, props),
-      ),
+    // Kopf, Übernehmen, Rückgängig, Hilfe und Rückfrage zeichnet der Rahmen.
+    shell: uspEditorShell,
+    render: ({ value, onChange }) =>
+      React.createElement(React.Suspense, { fallback: LOADING }, React.createElement(LazyUspEditor, { value, onChange })),
   });
 }

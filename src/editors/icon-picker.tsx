@@ -12,18 +12,18 @@
  */
 
 /**
- * Die Auswahl eines Zeichens aus der MAN-Symbolschrift: ein Raster mit
- * Suche. Ein Raster statt einer Ausklappliste, weil ein Symbol am Bild
- * erkannt wird, nicht am Namen — und `<option>` die Symbolschrift nicht
- * zuverlässig darstellt.
+ * Die Auswahl eines Zeichens aus der MAN-Symbolschrift: Suchfeld und ein
+ * Raster, das immer offen steht. Ein Raster statt einer Ausklappliste, weil
+ * ein Symbol am Bild erkannt wird, nicht am Namen — und `<option>` die
+ * Symbolschrift nicht zuverlässig darstellt.
  */
 
 import * as React from "react";
 import { ReactElement, useState } from "react";
-
-import { Button } from "@shared/ui/button";
-import { Input } from "@shared/ui/input";
-import { cn } from "@shared/ui/utils";
+import { Search } from "lucide-react";
+import { Button } from "@man/config-ui/primitives/button";
+import { Input } from "@man/config-ui/primitives/input";
+import { cn } from "@man/config-ui/primitives/utils";
 
 import { MAN_ICONS, ManIcon, findManIcon, manIconGlyph } from "../man-icons";
 
@@ -55,86 +55,63 @@ export interface IconPickerProps {
 }
 
 export function IconPicker({ value, onChange, testId }: IconPickerProps): ReactElement {
-  const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const current = findManIcon(value);
   const visible = MAN_ICONS.filter((icon) => matches(icon, query));
 
   return (
-    <div className="grid gap-2">
-      <div className="flex items-center gap-2">
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          data-testid={`${testId}-toggle`}
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          {current !== undefined ? (
-            <>
-              <Glyph icon={current} className="text-lg" />
-              {current.label}
-            </>
-          ) : (
-            "Symbol wählen"
-          )}
-        </Button>
-        {current !== undefined && (
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            data-testid={`${testId}-clear`}
-            onClick={() => onChange(undefined)}
-          >
-            Entfernen
-          </Button>
-        )}
-      </div>
-
-      {open && (
-        <div className="grid gap-2 rounded-md border p-2">
+    <div className="flex flex-col gap-3" data-testid={testId}>
+      <div className="flex max-w-[360px] items-center gap-2">
+        <div className="relative min-w-0 flex-1">
+          <Search
+            className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
+            aria-hidden
+          />
           <Input
             type="search"
-            placeholder="Suchen, z. B. Lkw, Kalender …"
-            aria-label="Symbol suchen"
+            className="pl-9"
+            placeholder="Icon suchen"
+            aria-label="Icon suchen"
             data-testid={`${testId}-search`}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <div
-            role="listbox"
-            aria-label="Symbole"
-            className="grid max-h-56 grid-cols-[repeat(auto-fill,minmax(2.75rem,1fr))] gap-1 overflow-y-auto"
-          >
-            {visible.map((icon) => (
-              <button
-                key={icon.name}
-                type="button"
-                role="option"
-                aria-selected={icon.name === value}
-                title={icon.label}
-                aria-label={icon.label}
-                data-testid={`${testId}-option-${icon.name}`}
-                className={cn(
-                  "grid h-11 place-items-center rounded-md border text-2xl outline-none hover:bg-accent focus-visible:ring-[3px] focus-visible:ring-ring/50",
-                  icon.name === value && "border-primary bg-accent",
-                )}
-                onClick={() => {
-                  onChange(icon.name);
-                  setOpen(false);
-                }}
-              >
-                <Glyph icon={icon} />
-              </button>
-            ))}
-            {visible.length === 0 && (
-              <p className="col-span-full p-2 text-sm text-muted-foreground">Kein Symbol gefunden.</p>
-            )}
-          </div>
         </div>
-      )}
+        {current !== undefined && (
+          <Button type="button" variant="ghost" size="sm" data-testid={`${testId}-clear`} onClick={() => onChange(undefined)}>
+            Kein Icon
+          </Button>
+        )}
+      </div>
+      <div
+        role="group"
+        aria-label="Icons"
+        className="grid max-h-72 max-w-[520px] grid-cols-8 gap-1.5 overflow-y-auto p-0.5 max-sm:grid-cols-5"
+      >
+        {visible.map((icon) => {
+          const on = icon.name === value;
+          return (
+            <button
+              key={icon.name}
+              type="button"
+              aria-pressed={on}
+              aria-label={icon.label}
+              title={icon.label}
+              data-testid={`${testId}-option-${icon.name}`}
+              className={cn(
+                "grid h-11 cursor-pointer place-items-center rounded-md border bg-background text-2xl text-foreground outline-none transition-colors hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 motion-reduce:transition-none",
+                on && "border-primary bg-muted ring-1 ring-primary",
+              )}
+              onClick={() => onChange(icon.name)}
+            >
+              <Glyph icon={icon} />
+            </button>
+          );
+        })}
+        {visible.length === 0 && (
+          <p className="col-span-full p-2 text-sm text-muted-foreground">Kein Icon gefunden.</p>
+        )}
+      </div>
     </div>
   );
 }
