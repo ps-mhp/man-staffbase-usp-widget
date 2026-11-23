@@ -7,10 +7,10 @@ een symbool uit het MAN-symboollettertype.
 
 ## Wat lezers zien
 
-Afhankelijk van de gekozen **opmaak** een van de zeven vormen: in twee kolommen, tegels,
-vinkjes op een vlak, een lijnbalk, een gekleurde kolom, een gekleurde strook of een vraagkop met
-balk. De **accentkleur** (rood, grijs of blauw) kleurt lijnen, vlakken en
-symbolen. Op de telefoon worden alle ontwerpen gestapeld tot één kolom.
+Afhankelijk van de gekozen **opmaak** een van de acht vormen: tweekoloms, tegels,
+vinkjes op een vlak, vinkjes met kopregel, lijnbalk, kleurkolom, kleurenband
+of vraagkop met balk. De **accentkleur** (rood, grijs of blauw) kleurt lijnen, vlakken en
+symbolen. Op de telefoon worden alle lay-outs in één kolom weergegeven.
 
 Zonder punten wordt het vak niet weergegeven.
 

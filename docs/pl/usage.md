@@ -9,7 +9,7 @@
 3. Opcjonalnie: w sekcji **Ikona** wybierz symbol spośród ikon MAN. Wyszukiwarka
    znajdzie niemieckie nazwy, np. „Lkw” lub „Kalender”.
 4. Zmień kolejność punktów, przeciągając uchwyt na liście lub używając strzałek
-   nad formularzem. Tam też można powielić lub usunąć punkt.
+   nad formularzem. Tam też można powielać i usuwać punkty.
 5. Po prawej stronie w panelu **Pole USP** w polu **Treść** wpisz **nagłówek**,
    np. „Co zyskuje klient?”, a w razie potrzeby dodaj **wiersz powyżej**,
    np. „Korzyści dla klienta”.

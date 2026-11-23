@@ -5,7 +5,7 @@
 Answer: It requires at least one item with a keyword or explanation.
 A heading alone will not be displayed.
 
-**Question:** There is an empty box instead of an icon.
+**Question:** An empty box appears instead of an icon.
 
 Answer: The MAN icon font comes from the instance’s theme; the box includes
 a copy if it’s missing. Reload the page. If the empty box remains,
@@ -15,7 +15,7 @@ report it along with the page and icon name.
 it’s gone.
 
 Answer: The Builder is a preview for readers and does not save anything.
-To permanently change the box’s appearance, open it in the Editor and select
+To permanently change the box, open it in the Editor and select
 the design and color there.
 
 **Question:** Are the texts translated as well?

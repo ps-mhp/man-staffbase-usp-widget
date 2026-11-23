@@ -8,7 +8,7 @@
    beste).
 3. Optioneel: kies onder **Pictogram** een pictogram uit de MAN-pictogrammen. De zoekfunctie
    vindt Duitse namen, bijvoorbeeld „Lkw“ of „Kalender“.
-4. Sorteer de punten door het handvat in de lijst te verslepen of met de pijltjes
+4. Sorteer de punten door ze aan het handvat in de lijst te verslepen of met de pijltjes
    boven het formulier. Daar kunt u een punt ook dupliceren en verwijderen.
 5. Rechts in het paneel **USP-Box** vult u onder **Inhoud** de **kop**
    in, bijvoorbeeld „Wat levert het de klant op?“, en indien nodig een **regel daarboven**,

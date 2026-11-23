@@ -1,0 +1,58 @@
+{
+  "versions": [
+    {
+      "version": "0.1.0-rc.6",
+      "date": "2026-11-23",
+      "entries": [
+        {
+          "type": "feat",
+          "text": "Gestaltung \"Haekchen mit Kopflinie\""
+        }
+      ]
+    },
+    {
+      "version": "0.1.0-rc.4",
+      "date": "2026-11-18",
+      "entries": [
+        {
+          "type": "feat",
+          "text": "Editor im Vollbild-Modal mit Punkteliste und Panel"
+        },
+        {
+          "type": "feat",
+          "text": "Prüfung und Statustext für den Rahmen"
+        }
+      ]
+    },
+    {
+      "version": "0.1.0-rc.3",
+      "date": "2026-11-11",
+      "entries": [
+        {
+          "type": "feat",
+          "text": "Builder-Modus für Leser:innen"
+        }
+      ]
+    },
+    {
+      "version": "0.1.0-rc.2",
+      "date": "2026-11-11",
+      "entries": [
+        {
+          "type": "fix",
+          "text": "eigenes Attribut usp-config statt config"
+        }
+      ]
+    },
+    {
+      "version": "0.1.0-rc.1",
+      "date": "2026-11-11",
+      "entries": [
+        {
+          "type": "feat",
+          "text": "USP-Box mit sieben Gestaltungen"
+        }
+      ]
+    }
+  ]
+}
