@@ -58,7 +58,8 @@ describe("UspBox", () => {
 
     expect(marks).toHaveLength(1);
     expect(marks[0]).toHaveAttribute("aria-hidden", "true");
-    expect(marks[0]!.textContent).toBe(String.fromCodePoint(0xe947));
+    expect(marks[0]!.querySelector("[data-man-icon]")).toHaveAttribute("data-man-icon", "man/truck");
+    expect(marks[0]!.textContent).toBe("");
   });
 
   it("blendet Symbole aus, wenn sie abgeschaltet sind", () => {
@@ -107,16 +108,16 @@ describe("itemIconName", () => {
   const item = { id: "a", title: "X" };
 
   it("setzt in der Häkchenliste immer ein Zeichen, notfalls das Häkchen", () => {
-    expect(itemIconName(item, config({ layout: "checklist" }))).toBe("checkmark");
+    expect(itemIconName(item, config({ layout: "checklist" }))).toBe("man/checkmark");
     expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checklist" }))).toBe("truck");
     expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checklist", showIcons: false }))).toBe(
-      "checkmark",
+      "man/checkmark",
     );
   });
 
   it("setzt auch bei „Häkchen mit Kopflinie“ immer ein Zeichen", () => {
-    expect(itemIconName(item, config({ layout: "checkline" }))).toBe("checkmark");
-    expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checkline", showIcons: false }))).toBe("checkmark");
+    expect(itemIconName(item, config({ layout: "checkline" }))).toBe("man/checkmark");
+    expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checkline", showIcons: false }))).toBe("man/checkmark");
   });
 
   it("zeigt sonst nur gewählte Zeichen", () => {

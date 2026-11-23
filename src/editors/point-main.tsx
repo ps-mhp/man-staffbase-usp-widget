@@ -26,7 +26,7 @@ import { RichTextField } from "@man/config-ui/rich-text/rich-text-field";
 import { ItemActions } from "@man/config-ui/sidebar/item-actions";
 
 import { UspItem } from "../usp-model";
-import { IconPicker } from "./icon-picker";
+import { IconField } from "@shared/icons/icon-field";
 
 export interface PointMainProps {
   item: UspItem | undefined;
@@ -108,12 +108,14 @@ export function PointMain({
           </Field>
         </FormSection>
 
-        <FormSection title="Icon" aside="MAN-Icons">
-          <IconPicker
-            // Je Punkt eine eigene Suche: ein Suchbegriff gehört nicht zum nächsten Punkt.
+        <FormSection title="Icon">
+          <IconField
+            // Je Punkt ein eigenes Feld: die offene Auswahl gehört nicht zum nächsten Punkt.
             key={item.id}
+            label="Zeichen vor dem Punkt"
+            title={`Icon für Punkt ${position + 1}`}
             value={item.icon}
-            testId={`${testId}-icon`}
+            data-testid={`${testId}-icon`}
             onChange={(icon) => onChange(icon === undefined ? withoutKey(item, "icon") : { ...item, icon })}
           />
         </FormSection>

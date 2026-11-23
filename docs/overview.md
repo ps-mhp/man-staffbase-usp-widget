@@ -3,7 +3,8 @@
 Die USP-Box fasst die Vorteile eines Produkts oder Angebots in wenigen Punkten
 zusammen: eine Frage wie „Was bringt's dem Kunden?“ und darunter oder daneben
 die Antworten, jeweils als Stichwort mit kurzer Erläuterung und auf Wunsch mit
-einem Symbol aus der MAN-Symbolschrift.
+einem Symbol aus der Icon-Bibliothek (Craft-Icons, MAN-Symbolschrift und
+Grundformen).
 
 ## Was Leser:innen sehen
 

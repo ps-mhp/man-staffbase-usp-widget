@@ -25,7 +25,7 @@
 
 import { decodePayload, encodePayload, isPayload } from "@shared/payload";
 
-import { findManIcon } from "./man-icons";
+import { normalizeIconId } from "@shared/icons/icon-id";
 
 /**
  * Die Gestaltungen. Die Namen beschreiben die Form, nicht den Buchstaben aus
@@ -71,7 +71,7 @@ export interface UspItem {
   title: string;
   /** Die Erläuterung darunter, z. B. „Verbessert“. */
   text?: string;
-  /** Name aus `MAN_ICONS`. */
+  /** ID aus der Icon-Bibliothek (`@shared/icons`); alte MAN-Namen liest der Parser um. */
   icon?: string;
 }
 
@@ -88,7 +88,7 @@ export interface UspConfig {
   builder: boolean;
   /** Die kleine Zeile über der Überschrift, z. B. „Kundennutzen“. */
   eyebrow?: string;
-  /** Zeichen über der Überschrift (Name aus `MAN_ICONS`); zeigt nur `checkline`. */
+  /** Zeichen über der Überschrift (ID der Icon-Bibliothek); zeigt nur `checkline`. */
   headIcon?: string;
   heading: string;
   items: UspItem[];
@@ -135,8 +135,8 @@ const parseItem = (value: unknown, options: ParseOptions): UspItem | null => {
   if (text !== "") item.text = text;
   // Unbekannte Namen fallen weg: ein Zeichen, das die Schrift nicht kennt,
   // wäre ein leeres Kästchen.
-  const icon = asText(value.icon);
-  if (findManIcon(icon) !== undefined) item.icon = icon;
+  const icon = normalizeIconId(asText(value.icon));
+  if (icon !== null) item.icon = icon;
   return item;
 };
 
@@ -158,8 +158,8 @@ export function parseConfigJson(json: string, options: ParseOptions = {}): UspCo
 
   const eyebrow = asText(parsed.eyebrow);
   if (eyebrow !== "") config.eyebrow = eyebrow;
-  const headIcon = asText(parsed.headIcon);
-  if (findManIcon(headIcon) !== undefined) config.headIcon = headIcon;
+  const headIcon = normalizeIconId(asText(parsed.headIcon));
+  if (headIcon !== null) config.headIcon = headIcon;
   config.heading = asText(parsed.heading);
 
   const items = Array.isArray(parsed.items) ? parsed.items : [];

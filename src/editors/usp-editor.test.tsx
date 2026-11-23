@@ -124,8 +124,9 @@ describe("UspEditor", () => {
     await userEvent.click(screen.getByTestId("usp-layout-checkline"));
     await userEvent.click(screen.getByRole("tab", { name: "Inhalt" }));
     const picker = screen.getByTestId("usp-head-icon");
+    await userEvent.click(within(picker).getByRole("button", { name: "Icon wählen …" }));
     await userEvent.click(within(picker).getByRole("button", { name: "Benutzer" }));
-    expect(h.latest().headIcon).toBe("usermanagement");
+    expect(h.latest().headIcon).toBe("man/usermanagement");
 
     await userEvent.click(within(picker).getByRole("button", { name: "Kein Icon" }));
     expect(h.latest()).not.toHaveProperty("headIcon");
@@ -164,17 +165,26 @@ describe("UspEditor", () => {
     expect(screen.getByRole("button", { name: "Punkt duplizieren" })).toHaveAttribute("aria-disabled", "true");
   });
 
-  it("wählt ein Icon im Raster, sucht und entfernt es wieder", async () => {
+  it("wählt ein Icon aus der Bibliothek, sucht und entfernt es wieder", async () => {
+    window.localStorage.clear();
     const h = setup(withItems());
-    fireEvent.change(screen.getByTestId("usp-item-0-icon-search"), { target: { value: "lkw" } });
-    expect(screen.queryByTestId("usp-item-0-icon-option-mail")).toBeNull();
+    const field = screen.getByTestId("usp-item-0-icon");
+    expect(within(field).getByText("Ohne Icon")).toBeInTheDocument();
+    await userEvent.click(within(field).getByRole("button", { name: "Icon wählen …" }));
+    await userEvent.type(within(field).getByRole("searchbox", { name: "Icons durchsuchen" }), "lkw");
+    expect(within(field).queryByRole("button", { name: "E-Mail" })).toBeNull();
 
-    await userEvent.click(screen.getByTestId("usp-item-0-icon-option-truck"));
-    expect(h.latest().items[0]!.icon).toBe("truck");
-    expect(screen.getByTestId("usp-item-0-icon-option-truck")).toHaveAttribute("aria-pressed", "true");
+    await userEvent.click(within(field).getByRole("button", { name: "Lkw (MAN)" }));
+    expect(h.latest().items[0]!.icon).toBe("man/truck");
+    expect(within(field).getByText("Lkw")).toBeInTheDocument();
 
-    await userEvent.click(screen.getByTestId("usp-item-0-icon-clear"));
+    await userEvent.click(within(field).getByRole("button", { name: "Kein Icon" }));
     expect(h.latest().items[0]).not.toHaveProperty("icon");
+  });
+
+  it("zeigt in der Liste das Icon alter Namen weiter", () => {
+    setup(withItems());
+    expect(screen.getByText("Icon Werkstatt")).toBeInTheDocument();
   });
 
   it("entfernt eine geleerte Erläuterung aus dem Punkt", () => {

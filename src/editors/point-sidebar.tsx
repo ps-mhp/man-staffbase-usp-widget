@@ -24,9 +24,9 @@ import { useConfigShell } from "@man/config-ui/shell/shell-context";
 import { ItemList, type ListItem } from "@man/config-ui/sidebar/item-list";
 import { SidebarPanel } from "@man/config-ui/sidebar/sidebar-panel";
 
-import { findManIcon } from "../man-icons";
+import { iconById } from "@shared/icons/catalog";
+import { IconGlyph } from "@shared/icons/icon-glyph";
 import { MAX_USP_ITEMS, UspItem } from "../usp-model";
-import { Glyph } from "./icon-picker";
 
 export interface PointSidebarProps {
   items: readonly UspItem[];
@@ -43,22 +43,22 @@ const EMPTY_STATE = (
 );
 
 function Thumb({ name }: { name: string | undefined }): ReactElement {
-  const icon = findManIcon(name);
+  const icon = iconById(name);
   return icon === undefined ? (
     <Minus className="size-4 text-muted-foreground" aria-hidden />
   ) : (
-    <Glyph icon={icon} className="text-xl text-foreground" />
+    <IconGlyph id={icon.id} className="size-5 text-foreground" />
   );
 }
 
 function listItems(items: readonly UspItem[], issuesVisible: boolean): ListItem[] {
   return items.map((item) => {
-    const icon = findManIcon(item.icon);
+    const icon = iconById(item.icon);
     const empty = item.title.trim() === "" && (item.text ?? "").trim() === "";
     return {
       id: item.id,
       label: item.title.trim() === "" ? (item.text ?? "Neuer Punkt") : item.title,
-      description: icon === undefined ? "Ohne Icon" : `Icon ${icon.label}`,
+      description: icon === undefined ? "Ohne Icon" : `Icon ${icon.name}`,
       thumbnail: <Thumb name={item.icon} />,
       invalid: issuesVisible && empty,
     };

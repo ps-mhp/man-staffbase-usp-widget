@@ -27,11 +27,10 @@
  */
 
 import * as React from "react";
-import { ReactElement, useCallback, useEffect, useState } from "react";
+import { ReactElement, useCallback, useState } from "react";
 import { ConfigWorkspace } from "@man/config-ui/layout/config-workspace";
 import { useConfigShell } from "@man/config-ui/shell/shell-context";
 
-import { ensureIconFontFace } from "../icon-font";
 import { UspBox } from "../usp";
 import { MAX_USP_ITEMS, UspConfig, UspItem, emptyItem, newItemId } from "../usp-model";
 import { PointMain } from "./point-main";
@@ -100,10 +99,6 @@ export function UspEditor({ value, onChange }: UspEditorProps): ReactElement {
   const { index, item, select } = useSelection(items);
   const full = items.length >= MAX_USP_ITEMS;
   const setItems = (next: UspItem[]): void => onChange({ ...value, items: next });
-
-  // Die Zeichen in Liste und Raster brauchen die Schrift, auch wenn die Box
-  // (Vorschau) gerade nicht gezeigt wird.
-  useEffect(() => ensureIconFontFace(), []);
 
   const add = (): void => {
     if (full) return;

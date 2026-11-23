@@ -48,7 +48,7 @@ describe("uspTranslationProvider", () => {
       eyebrow: "EN:Kundennutzen",
       heading: "EN:Was bringt's dem Kunden?",
       items: [
-        { id: "a", title: "EN:Aerodynamik", text: "<p>EN:Verbessert</p>", icon: "checkmark" },
+        { id: "a", title: "EN:Aerodynamik", text: "<p>EN:Verbessert</p>", icon: "man/checkmark" },
         { id: "b", title: "EN:Styling" },
       ],
     });

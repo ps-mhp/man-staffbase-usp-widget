@@ -5,11 +5,11 @@
 Antwort: Sie braucht mindestens einen Punkt mit Stichwort oder Erläuterung.
 Eine Überschrift allein wird nicht gezeigt.
 
-**Frage:** Statt eines Symbols steht ein leeres Kästchen.
+**Frage:** Ein Symbol fehlt, wo eines gewählt ist.
 
-Antwort: Die MAN-Symbolschrift kommt aus dem Theme der Instanz; die Box bringt
-eine Kopie mit, falls es fehlt. Laden Sie die Seite neu. Bleibt das Kästchen,
-melden Sie es mit Seite und Symbolname.
+Antwort: Die Zeichnungen der Symbole lädt die Box kurz nach dem Text nach.
+Laden Sie die Seite neu. Fehlt das Symbol weiter, melden Sie es mit Seite und
+Name des Symbols.
 
 **Frage:** Ich habe im Builder eine Gestaltung gewählt, nach dem Neuladen ist
 sie weg.

@@ -204,17 +204,13 @@ $accents: (
   height: 24px;
 }
 
-// Erst die Schrift des Themes, dann die eingebettete Kopie (`icon-font.ts`).
+// Icons der Bibliothek (`@shared/icons`): Maske in Schriftfarbe, 1em groß –
+// Größe und Farbe kommen wie früher bei der Symbolschrift aus font-size und color.
 .man-usp__icon {
   @include man-outshine-host {
-    font-family: "man-icon", "man-usp-icon" !important;
     font-size: var(--usp-icon-size) !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
     line-height: 1 !important;
     color: var(--usp-icon-color) !important;
-    speak: never;
-    -webkit-font-smoothing: antialiased;
   }
 }
 

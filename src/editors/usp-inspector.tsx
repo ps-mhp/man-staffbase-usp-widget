@@ -28,7 +28,7 @@ import { Input } from "@man/config-ui/primitives/input";
 import { cn } from "@man/config-ui/primitives/utils";
 
 import { ACCENT_LABELS, LAYOUT_LABELS } from "../labels";
-import { IconPicker } from "./icon-picker";
+import { IconField } from "@shared/icons/icon-field";
 import { USP_ACCENTS, USP_LAYOUTS, UspAccent, UspConfig, UspLayout } from "../usp-model";
 
 export interface UspInspectorProps {
@@ -153,8 +153,13 @@ function ContentTab({ value, onChange }: UspInspectorProps): ReactElement {
       </Field>
       {value.layout === "checkline" && (
         <section aria-label="Zeichen über der Überschrift" className="flex flex-col gap-1.5">
-          <span className="text-[13px] font-semibold text-foreground">Zeichen über der Überschrift</span>
-          <IconPicker value={value.headIcon} onChange={(headIcon) => onChange(withHeadIcon(value, headIcon))} testId="usp-head-icon" />
+          <IconField
+            label="Zeichen über der Überschrift"
+            title="Zeichen über der Überschrift"
+            value={value.headIcon}
+            onChange={(headIcon) => onChange(withHeadIcon(value, headIcon))}
+            data-testid="usp-head-icon"
+          />
           <p className="text-[13px] text-muted-foreground">Steht in Akzentfarbe über der Frage; „Icons zeigen“ aus blendet es aus.</p>
         </section>
       )}

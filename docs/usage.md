@@ -6,8 +6,10 @@
    in der Mitte **Stichwort** und optional **Erläuterung** ein. Wiederholen
    Sie das für jeden Vorteil (bis zu acht; drei bis vier lesen sich am
    besten).
-3. Optional: Wählen Sie unter **Icon** ein Zeichen aus den MAN-Icons. Die Suche
-   findet deutsche Namen, z. B. „Lkw“ oder „Kalender“.
+3. Optional: Klicken Sie unter **Icon** auf **Icon wählen …**. Rechts öffnet
+   sich die Icon-Bibliothek; die Suche findet deutsche und englische Namen,
+   z. B. „Lkw“ oder „Kalender“, der Filter trennt Craft, MAN und Formen. Ein
+   Klick übernimmt das Icon, **Kein Icon** entfernt es.
 4. Ordnen Sie die Punkte per Ziehen am Griff in der Liste oder mit den Pfeilen
    über dem Formular. Dort duplizieren und löschen Sie einen Punkt auch.
 5. Rechts im Panel **USP-Box** tragen Sie unter **Inhalt** die **Überschrift**

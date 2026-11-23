@@ -21,19 +21,19 @@
  * dass ein Inhalt verloren geht.
  */
 
-import React, { useEffect } from "react";
+import React from "react";
 
 import { sanitizeSimpleRichText } from "@man/config-ui/rich-text/simple-rich-text";
 import { useHotStyle } from "@shared/hot-style";
-import { ensureIconFontFace } from "./icon-font";
-import { findManIcon, manIconGlyph } from "./man-icons";
+import { normalizeIconId } from "@shared/icons/icon-id";
+import { useIconMasks } from "@shared/icons/use-icon-stylesheet";
 import { UspConfig, UspItem, UspLayout, hasContent } from "./usp-model";
 import uspCss from "./styles/usp.scss";
 
 export const USP_WIDGET_TAG = "usp-widget";
 
 /** Das Häkchen der Häkchenlisten, wenn ein Punkt kein eigenes Zeichen trägt. */
-const CHECKMARK = "checkmark";
+const CHECKMARK = "man/checkmark";
 
 /** Die Gestaltungen, die von den Zeichen in Akzentquadraten leben. */
 const isChecklist = (layout: UspLayout): boolean => layout === "checklist" || layout === "checkline";
@@ -57,13 +57,19 @@ export function itemIconName(item: UspItem, config: UspConfig): string | undefin
   return config.showIcons ? item.icon : undefined;
 }
 
+/**
+ * Ein Icon der Bibliothek als Maske in Schriftfarbe (`useIconMasks`); Größe
+ * und Farbe setzt `.man-usp__icon`.
+ */
+const IconMark = ({ id }: { id: string }): React.ReactElement => <span className="man-usp__icon" data-man-icon={id} />;
+
 function ItemMark({ name }: { name: string | undefined }): React.ReactElement | null {
-  const icon = findManIcon(name);
-  if (icon === undefined) return null;
+  const id = normalizeIconId(name);
+  if (id === null) return null;
   // Schmückend: Bedeutung trägt das Stichwort daneben.
   return (
     <span className="man-usp__mark" aria-hidden="true">
-      <span className="man-usp__icon">{manIconGlyph(icon)}</span>
+      <IconMark id={id} />
     </span>
   );
 }
@@ -85,16 +91,14 @@ export interface UspBoxProps {
 export function UspBox({ config }: UspBoxProps): React.ReactElement | null {
   const liveCss = useHotStyle(uspCss, USP_WIDGET_TAG, "styles/usp.scss");
 
-  useEffect(() => {
-    if (config.showIcons || isChecklist(config.layout)) ensureIconFontFace();
-  }, [config.showIcons, config.layout]);
-
   if (!hasContent(config)) return null;
 
   const heading = config.heading.trim();
   const eyebrow = config.eyebrow?.trim() ?? "";
   // Das Zeichen über der Frage gehört zur Kopflinie; „Icons aus“ nimmt es mit.
-  const headIcon = config.layout === "checkline" && config.showIcons ? findManIcon(config.headIcon) : undefined;
+  const headIcon = config.layout === "checkline" && config.showIcons ? (normalizeIconId(config.headIcon) ?? undefined) : undefined;
+  // Nur die Zeichnungen, die die Box zeigt; nachgeladen, erst wenn es Icons gibt.
+  const iconCss = useIconMasks([headIcon, ...config.items.map((item) => itemIconName(item, config))]);
 
   return (
     <section
@@ -102,12 +106,12 @@ export function UspBox({ config }: UspBoxProps): React.ReactElement | null {
       data-accent={config.accent}
       data-testid="usp-box"
     >
-      <style>{liveCss}</style>
+      <style>{`${liveCss}\n${iconCss}`}</style>
       {(heading !== "" || eyebrow !== "" || headIcon !== undefined) && (
         <div className="man-usp__head">
           {headIcon !== undefined && (
             <span className="man-usp__head-mark" aria-hidden="true">
-              <span className="man-usp__icon">{manIconGlyph(headIcon)}</span>
+              <IconMark id={headIcon} />
             </span>
           )}
           {eyebrow !== "" && <p className="man-usp__eyebrow">{eyebrow}</p>}
