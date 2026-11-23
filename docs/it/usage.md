@@ -8,7 +8,7 @@
    funzionano meglio).
 3. Facoltativo: sotto **Icona**, selezionate un’icona tra quelle MAN. La ricerca
    trova nomi in tedesco, ad es. «Lkw» o «Kalender».
-4. Ordinate i punti trascinandoli nella lista tramite la maniglia o utilizzando le frecce
+4. Ordinate i punti trascinandone la maniglia nell’elenco o utilizzando le frecce
    sopra il modulo. Da lì potete anche duplicare ed eliminare un punto.
 5. A destra nel pannello **Casella USP**, inserite sotto **Contenuto** il **titolo**
   , ad esempio «Quali sono i vantaggi per il cliente?», e, se necessario, una **riga sopra**,

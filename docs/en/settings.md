@@ -9,4 +9,4 @@
 | Line Above (the “Content” tab) | Optional: a short line above the heading. |
 | Icon above the heading (Content tab) | Only if “Checkmark with header line” is selected: a MAN icon in an accent color above the question. Optional. |
 | Heading (Content tab) | The question or title of the box. |
-| Bullets (list on the left) | Up to eight. For each bullet: **keyword**, optional **explanation**, and **icon**. A bullet with no text is not displayed. |
+| Bullets (list on the left) | Up to eight. For each bullet: **keyword**, optional **explanation**, and **icon**. The explanation can contain paragraphs, line breaks (Shift+Enter), and bulleted lists (the “Bulleted List” button or “- ” at the beginning of a line). A bullet point without text is not displayed. |

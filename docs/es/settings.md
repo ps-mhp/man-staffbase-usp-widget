@@ -9,4 +9,4 @@
 | Línea superior (pestaña «Contenido») | Opcional: una breve línea encima del título. |
 | Símbolo encima del título (pestaña «Contenido») | Solo con «Marca de verificación con línea superior»: un icono MAN en color de contraste encima de la pregunta. Opcional. |
 | Título (pestaña «Contenido») | La pregunta o el título del recuadro. |
-| Puntos (lista a la izquierda) | Hasta ocho. Por cada punto, **palabra clave**, opcionalmente **explicación** e **icono**. No se muestra un punto sin texto. |
+| Puntos (lista a la izquierda) | Hasta ocho. Por cada punto, **palabra clave**, opcionalmente **explicación** e **icono**. La explicación puede contener párrafos, saltos de línea (Mayús+Intro) y enumeraciones (botón «Enumeración» o «- » al principio de la línea). No se muestra un punto sin texto. |

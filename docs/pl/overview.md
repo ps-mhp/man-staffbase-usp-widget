@@ -23,6 +23,6 @@ Nic nie jest przy tym zapisywane.
 
 Edytor otwiera się w trybie pełnoekranowym: po lewej stronie znajdują się **punkty**, pośrodku pola
 wybranego punktu (tekst i ikona), a po prawej panel **Pole USP** z
-zakładkami **Treść**, **Projekt** i **Zachowanie**. Dzięki opcjom **Komputer stacjonarny**,
+zakładkami **Treść**, **Projekt** oraz **Zachowanie**. Dzięki opcjom **Komputer stacjonarny**,
 **Tablet** i **Telefon komórkowy** w nagłówku edytor wyświetla okienko tak, jak wygląda ono na
 stronie; jedynie szerokość zależy od rozmiaru ekranu.

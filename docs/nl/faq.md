@@ -7,8 +7,8 @@ Een kopje alleen wordt niet weergegeven.
 
 **Vraag:** In plaats van een symbool staat er een leeg vakje.
 
-Antwoord: Het MAN-symboollettertype is afkomstig uit het thema van de instantie; het kader bevat
-een kopie ervan, mocht het ontbreken. Laad de pagina opnieuw. Blijft het vakje staan,
+Antwoord: Het MAN-symboollettertype is afkomstig uit het thema van de instantie; het kader
+neemt een kopie mee als het ontbreekt. Laad de pagina opnieuw. Blijft het vakje staan,
 meld dit dan met vermelding van de pagina en de symboolnaam.
 
 **Vraag:** Ik heb in de Builder een ontwerp gekozen, maar na het opnieuw laden is

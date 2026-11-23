@@ -9,4 +9,4 @@
 | Regel erboven (tabblad ‘Inhoud’) | Optioneel: een korte regel boven de kop. |
 | Teken boven de kop (tabblad „Inhoud“) | Alleen bij „Vinkje met kopregel“: een MAN-pictogram in accentkleur boven de vraag. Optioneel. |
 | Kop (tabblad „Inhoud“) | De vraag of de titel van het vak. |
-| Punten (lijst links) | Maximaal acht. Per punt **trefwoord**, optioneel **toelichting** en **pictogram**. Een punt zonder tekst wordt niet weergegeven. |
+| Punten (lijst links) | Maximaal acht. Per punt **trefwoord**, optioneel **toelichting** en **pictogram**. De toelichting kan alinea’s, regeleinden (Shift+Enter) en opsommingen bevatten (knop „Opsomming“ of „- “ aan het begin van de regel). Een punt zonder tekst wordt niet weergegeven. |

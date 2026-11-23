@@ -3,7 +3,7 @@
 **Question :** La boîte n'apparaît pas sur la page.
 
 Réponse : Elle nécessite au moins un élément contenant un mot-clé ou une explication.
-Un titre seul ne s'affiche pas.
+Un titre seul n'est pas affiché.
 
 **Question :** À la place d'une icône, il y a une case vide.
 

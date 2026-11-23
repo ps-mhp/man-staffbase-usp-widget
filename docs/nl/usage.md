@@ -12,7 +12,7 @@
    boven het formulier. Daar kunt u een punt ook dupliceren en verwijderen.
 5. Rechts in het paneel **USP-Box** vult u onder **Inhoud** de **kop**
    in, bijvoorbeeld „Wat levert het de klant op?“, en indien nodig een **regel daarboven**,
-   bijvoorbeeld „Voordelen voor de klant“.
+   bijvoorbeeld „Klantvoordeel“.
 6. Kies onder **Ontwerp** **Lay-out**, **Accent** en of **pictogrammen**
    worden weergegeven; schakel onder **Gedrag** de **Builder-modus** in.
 7. Controleer met **Desktop**, **Tablet** en **Mobiel** bovenaan kunt u controleren hoe het vak op

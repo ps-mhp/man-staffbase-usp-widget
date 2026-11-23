@@ -8,7 +8,7 @@ een symbool uit het MAN-symboollettertype.
 ## Wat lezers zien
 
 Afhankelijk van de gekozen **opmaak** een van de acht vormen: tweekoloms, tegels,
-vinkjes op een vlak, vinkjes met kopregel, lijnbalk, kleurkolom, kleurenband
+vinkjes op een vlak, vinkjes met een kopregel, lijnbalk, kleurkolom, kleurband
 of vraagkop met balk. De **accentkleur** (rood, grijs of blauw) kleurt lijnen, vlakken en
 symbolen. Op de telefoon worden alle lay-outs in één kolom weergegeven.
 

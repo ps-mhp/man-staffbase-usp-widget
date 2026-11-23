@@ -9,4 +9,4 @@
 | Ligne au-dessus (onglet « Contenu ») | Facultatif : une courte ligne au-dessus du titre. |
 | Symbole au-dessus du titre (onglet « Contenu ») | Uniquement avec « Case à cocher avec ligne de tête » : une icône MAN dans une couleur contrastante au-dessus de la question. Facultatif. |
 | Titre (onglet « Contenu ») | La question ou le titre de l’encadré. |
-| Points (liste à gauche) | Jusqu’à huit. Par point : **mot-clé**, éventuellement **explication** et **icône**. Un point sans texte n’est pas affiché. |
+| Points (liste à gauche) | Jusqu’à huit. Par point : **mot-clé**, **explication** facultative et **icône**. L’explication peut contenir des paragraphes, des sauts de ligne (Maj+Entrée) et des listes à puces (bouton « Liste à puces » ou « - » en début de ligne). Un point sans texte n’est pas affiché. |

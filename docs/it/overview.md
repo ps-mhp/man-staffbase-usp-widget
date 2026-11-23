@@ -8,7 +8,7 @@ un simbolo tratto dal set di simboli MAN.
 ## Cosa vedono i lettori
 
 A seconda del **layout** scelto, una delle otto forme disponibili: a due colonne, a riquadri,
-segni di spunta su sfondo, segni di spunta con linea superiore, barra di linee, colonna colorata, nastro colorato
+segno di spunta su sfondo, segno di spunta con linea superiore, barra di linee, colonna colorata, nastro colorato
 o intestazione con domanda e barra. Il **colore di risalto** (rosso, grigio o blu) colora linee, aree e
 simboli. Sul telefono, tutti i layout vengono impilati in un’unica colonna.
 

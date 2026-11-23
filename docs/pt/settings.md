@@ -9,4 +9,4 @@
 | Linha acima (separador «Conteúdo») | Opcional: uma linha curta acima do título. |
 | Símbolo acima do título (separador «Conteúdo») | Apenas com «Caixa de seleção com linha superior»: um ícone MAN numa cor de destaque acima da pergunta. Opcional. |
 | Título (separador «Conteúdo») | A pergunta ou o título da caixa. |
-| Pontos (lista à esquerda) | Até oito. Por ponto: **palavra-chave**, opcionalmente **explicação** e **ícone**. Um ponto sem texto não é apresentado. |
+| Pontos (lista à esquerda) | Até oito. Por ponto: **palavra-chave**, opcionalmente **explicação** e **ícone**. A explicação pode conter parágrafos, quebras de linha (Shift+Enter) e enumerações (botão «Enumeração» ou «- » no início da linha). Um ponto sem texto não é apresentado. |

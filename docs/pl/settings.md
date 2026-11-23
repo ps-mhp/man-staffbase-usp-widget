@@ -9,4 +9,4 @@
 | Wiersz powyżej (zakładka „Treść”) | Opcjonalnie, krótki wiersz nad nagłówkiem. |
 | Symbol nad nagłówkiem (zakładka „Treść”) | Tylko w przypadku opcji „Zaznaczenie z linią nagłówkową”: ikona MAN w kolorze akcentującym nad pytaniem. Opcjonalnie. |
 | Nagłówek (zakładka „Treść”) | Pytanie lub tytuł ramki. |
-| Punkty (lista po lewej) | Maksymalnie osiem. W każdym punkcie **słowo kluczowe**, opcjonalnie **objaśnienie** i **ikona**. Punkt bez tekstu nie jest wyświetlany. |
+| Punkty (lista po lewej) | Maksymalnie osiem. W każdym punkcie **słowo kluczowe**, opcjonalnie **objaśnienie** i **ikona**. Wyjaśnienie może zawierać akapity, znaki końca linii (Shift+Enter) oraz wypunktowania (przycisk „Wypunktowanie” lub „- ” na początku wiersza). Punkt bez tekstu nie jest wyświetlany. |
