@@ -14,7 +14,7 @@
 /**
  * Die USP-Box.
  *
- * Ein Markup für alle sieben Gestaltungen: Kopf (Zeile darüber, Überschrift)
+ * Ein Markup für alle acht Gestaltungen: Kopf (Zeichen, Zeile darüber, Überschrift)
  * und eine Liste von Punkten (Zeichen, Stichwort, Erläuterung). Was daraus
  * Kacheln, Leiste oder Farbspalte macht, steht allein im Stylesheet unter
  * `man-usp--<layout>`. So kann die Redaktion die Gestaltung wechseln, ohne
@@ -31,14 +31,18 @@ import uspCss from "./styles/usp.scss";
 
 export const USP_WIDGET_TAG = "usp-widget";
 
-/** Das Häkchen der Gestaltung `checklist`, wenn ein Punkt kein eigenes Zeichen trägt. */
+/** Das Häkchen der Häkchenlisten, wenn ein Punkt kein eigenes Zeichen trägt. */
 const CHECKMARK = "checkmark";
+
+/** Die Gestaltungen, die von den Zeichen in Akzentquadraten leben. */
+const isChecklist = (layout: UspLayout): boolean => layout === "checklist" || layout === "checkline";
 
 /** Ausgeschrieben, damit jede Klasse im Quelltext auffindbar bleibt. */
 const LAYOUT_CLASS: Record<UspLayout, string> = {
   split: "man-usp--split",
   tiles: "man-usp--tiles",
   checklist: "man-usp--checklist",
+  checkline: "man-usp--checkline",
   linebar: "man-usp--linebar",
   sidepanel: "man-usp--sidepanel",
   band: "man-usp--band",
@@ -48,7 +52,7 @@ const LAYOUT_CLASS: Record<UspLayout, string> = {
 /** Welches Zeichen vor einem Punkt steht — oder keins. */
 export function itemIconName(item: UspItem, config: UspConfig): string | undefined {
   // Die Häkchenliste lebt vom Zeichen; ohne es wäre sie eine nackte Liste.
-  if (config.layout === "checklist") return config.showIcons ? (item.icon ?? CHECKMARK) : CHECKMARK;
+  if (isChecklist(config.layout)) return config.showIcons ? (item.icon ?? CHECKMARK) : CHECKMARK;
   return config.showIcons ? item.icon : undefined;
 }
 
@@ -71,13 +75,15 @@ export function UspBox({ config }: UspBoxProps): React.ReactElement | null {
   const liveCss = useHotStyle(uspCss, USP_WIDGET_TAG, "styles/usp.scss");
 
   useEffect(() => {
-    if (config.showIcons || config.layout === "checklist") ensureIconFontFace();
+    if (config.showIcons || isChecklist(config.layout)) ensureIconFontFace();
   }, [config.showIcons, config.layout]);
 
   if (!hasContent(config)) return null;
 
   const heading = config.heading.trim();
   const eyebrow = config.eyebrow?.trim() ?? "";
+  // Das Zeichen über der Frage gehört zur Kopflinie; „Icons aus“ nimmt es mit.
+  const headIcon = config.layout === "checkline" && config.showIcons ? findManIcon(config.headIcon) : undefined;
 
   return (
     <section
@@ -86,8 +92,13 @@ export function UspBox({ config }: UspBoxProps): React.ReactElement | null {
       data-testid="usp-box"
     >
       <style>{liveCss}</style>
-      {(heading !== "" || eyebrow !== "") && (
+      {(heading !== "" || eyebrow !== "" || headIcon !== undefined) && (
         <div className="man-usp__head">
+          {headIcon !== undefined && (
+            <span className="man-usp__head-mark" aria-hidden="true">
+              <span className="man-usp__icon">{manIconGlyph(headIcon)}</span>
+            </span>
+          )}
           {eyebrow !== "" && <p className="man-usp__eyebrow">{eyebrow}</p>}
           {heading !== "" && <h3 className="man-usp__heading">{heading}</h3>}
         </div>

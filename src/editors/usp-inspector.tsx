@@ -28,6 +28,7 @@ import { Input } from "@man/config-ui/primitives/input";
 import { cn } from "@man/config-ui/primitives/utils";
 
 import { ACCENT_LABELS, LAYOUT_LABELS } from "../labels";
+import { IconPicker } from "./icon-picker";
 import { USP_ACCENTS, USP_LAYOUTS, UspAccent, UspConfig, UspLayout } from "../usp-model";
 
 export interface UspInspectorProps {
@@ -63,6 +64,7 @@ const THUMB_ACCENT: Record<UspLayout, { head: boolean; rest: boolean }> = {
   split: { head: false, rest: false },
   tiles: { head: false, rest: false },
   checklist: { head: true, rest: false },
+  checkline: { head: true, rest: false },
   linebar: { head: true, rest: false },
   sidepanel: { head: true, rest: false },
   band: { head: true, rest: true },
@@ -114,6 +116,14 @@ function LayoutField({ value, onChange }: { value: UspLayout; onChange: (layout:
   );
 }
 
+/** Ohne Zeichen statt mit leerem Namen: so bleibt das Attribut schlank. */
+function withHeadIcon(config: UspConfig, headIcon: string | undefined): UspConfig {
+  if (headIcon !== undefined) return { ...config, headIcon };
+  const { headIcon: _dropped, ...rest } = config;
+  void _dropped;
+  return rest;
+}
+
 /** Ohne die Zeile darüber statt mit leerem Text: so bleibt das Attribut schlank. */
 function withEyebrow(config: UspConfig, eyebrow: string): UspConfig {
   if (eyebrow !== "") return { ...config, eyebrow };
@@ -141,6 +151,13 @@ function ContentTab({ value, onChange }: UspInspectorProps): ReactElement {
           onChange={(event) => onChange({ ...value, heading: event.target.value })}
         />
       </Field>
+      {value.layout === "checkline" && (
+        <section aria-label="Zeichen über der Überschrift" className="flex flex-col gap-1.5">
+          <span className="text-[13px] font-semibold text-foreground">Zeichen über der Überschrift</span>
+          <IconPicker value={value.headIcon} onChange={(headIcon) => onChange(withHeadIcon(value, headIcon))} testId="usp-head-icon" />
+          <p className="text-[13px] text-muted-foreground">Steht in Akzentfarbe über der Frage; „Icons zeigen“ aus blendet es aus.</p>
+        </section>
+      )}
       <p className="text-[13px] text-muted-foreground">
         Die Punkte bearbeiten Sie links; Layout, Akzent und Icons unter „Gestaltung“.
       </p>
@@ -160,7 +177,7 @@ function DesignTab({ value, onChange }: UspInspectorProps): ReactElement {
       />
       <SwitchRow
         label="Icons zeigen"
-        hint="Aus blendet alle Icons aus; „Häkchen auf Fläche“ zeigt dann überall das Häkchen."
+        hint="Aus blendet alle Icons aus; die Häkchenlisten zeigen dann überall das Häkchen."
         checked={value.showIcons}
         onCheckedChange={(showIcons) => onChange({ ...value, showIcons })}
         data-testid="usp-show-icons"

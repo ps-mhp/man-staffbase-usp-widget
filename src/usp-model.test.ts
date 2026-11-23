@@ -72,6 +72,15 @@ describe("parseConfig", () => {
   });
 });
 
+describe("Häkchen mit Kopflinie", () => {
+  it("liest die Gestaltung und nur bekannte Zeichen über der Frage", () => {
+    const parsed = parseConfig(JSON.stringify({ layout: "checkline", headIcon: "usermanagement", heading: "X", items: [{ title: "A" }] }));
+    expect(parsed.layout).toBe("checkline");
+    expect(parsed.headIcon).toBe("usermanagement");
+    expect(parseConfig(JSON.stringify({ headIcon: "gibtsnicht", items: [{ title: "A" }] }))).not.toHaveProperty("headIcon");
+  });
+});
+
 describe("Schreiben", () => {
   it("übersteht einen Round-Trip über das Attribut", () => {
     const config = {
@@ -81,6 +90,7 @@ describe("Schreiben", () => {
       showIcons: false,
       builder: true,
       eyebrow: "Kundennutzen",
+      headIcon: "usermanagement",
       heading: "Was bringt's dem Kunden?",
       items: [{ id: "a", title: "Aerodynamik", text: "Verbessert", icon: "checkmark" }],
     };

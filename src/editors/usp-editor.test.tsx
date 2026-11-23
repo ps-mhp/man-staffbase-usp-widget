@@ -82,10 +82,10 @@ describe("UspEditor", () => {
     expect(screen.getByTestId("usp-item-1-title")).toHaveValue("Zwei");
   });
 
-  it("bietet alle sieben Layouts und wählt eines", async () => {
+  it("bietet alle acht Layouts und wählt eines", async () => {
     const h = setup(withItems());
     await openTab("Gestaltung");
-    expect(screen.getAllByTestId(/^usp-layout-/)).toHaveLength(7);
+    expect(screen.getAllByTestId(/^usp-layout-/)).toHaveLength(8);
 
     await userEvent.click(screen.getByTestId("usp-layout-sidepanel"));
 
@@ -113,6 +113,22 @@ describe("UspEditor", () => {
     await openTab("Verhalten");
     await userEvent.click(screen.getByTestId("usp-builder-toggle"));
     expect(h.latest().builder).toBe(true);
+  });
+
+  it("bietet bei „Häkchen mit Kopflinie“ das Zeichen über der Überschrift an", async () => {
+    const h = setup(withItems());
+    await userEvent.click(screen.getByRole("tab", { name: "Inhalt" }));
+    expect(screen.queryByTestId("usp-head-icon")).toBeNull();
+
+    await openTab("Gestaltung");
+    await userEvent.click(screen.getByTestId("usp-layout-checkline"));
+    await userEvent.click(screen.getByRole("tab", { name: "Inhalt" }));
+    const picker = screen.getByTestId("usp-head-icon");
+    await userEvent.click(within(picker).getByRole("button", { name: "Benutzer" }));
+    expect(h.latest().headIcon).toBe("usermanagement");
+
+    await userEvent.click(within(picker).getByRole("button", { name: "Kein Icon" }));
+    expect(h.latest()).not.toHaveProperty("headIcon");
   });
 
   it("pflegt Zeile darüber und Überschrift unter Inhalt", async () => {

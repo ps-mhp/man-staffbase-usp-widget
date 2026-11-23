@@ -271,6 +271,54 @@ $accents: (
   }
 }
 
+// Häkchen mit Kopflinie: wie „Häkchen auf Fläche“, aber ohne Fläche – eine
+// Akzentlinie oben, darunter ein Zeichen in Akzentfarbe über der Frage.
+.man-usp--checkline {
+  --usp-icon-color: #{man("white")};
+  --usp-icon-size: 18px;
+  --usp-heading-size: 24px;
+  --usp-eyebrow-color: #{man("text")};
+
+  display: grid;
+  gap: man("space-5");
+  padding-top: man("space-5");
+  border-top: 4px solid var(--usp-accent);
+
+  .man-usp__head {
+    gap: man("space-2");
+  }
+
+  .man-usp__list {
+    display: grid;
+    gap: man("space-3");
+  }
+
+  .man-usp__mark {
+    width: 28px;
+    height: 28px;
+    background: var(--usp-accent);
+  }
+
+  .man-usp__point {
+    display: block;
+    padding-top: 2px;
+  }
+
+  .man-usp__title + .man-usp__text::before {
+    content: " ";
+  }
+}
+
+// Das Zeichen über der Frage: Akzentfarbe statt Weiss, ohne Quadrat.
+.man-usp__head-mark {
+  --usp-icon-color: var(--usp-accent);
+  --usp-icon-size: 32px;
+
+  display: block;
+  margin-bottom: man("space-2");
+  line-height: 1;
+}
+
 // Linienleiste: Titel mit Akzentlinie, Punkte in einer Zeile.
 .man-usp--linebar {
   --usp-heading-size: 20px;

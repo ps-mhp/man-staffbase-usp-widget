@@ -33,17 +33,19 @@ import { findManIcon } from "./man-icons";
  *  - `split`: Frage links, Antworten rechts untereinander (Entwurf E),
  *  - `tiles`: Kacheln mit Akzentkante (C),
  *  - `checklist`: getönte Fläche mit Häkchen (B),
+ *  - `checkline`: Häkchenliste ohne Fläche, Akzentlinie oben, Zeichen über der Frage,
  *  - `linebar`: Titel mit Akzentlinie, Punkte in einer Zeile (K),
  *  - `sidepanel`: Farbspalte mit Frage, Antworten rechts (J),
  *  - `band`: Farbband oben, Punkte darunter nebeneinander (I),
  *  - `headbar`: Frage links, Punkte als Leiste daneben (G).
  */
-export type UspLayout = "split" | "tiles" | "checklist" | "linebar" | "sidepanel" | "band" | "headbar";
+export type UspLayout = "split" | "tiles" | "checklist" | "checkline" | "linebar" | "sidepanel" | "band" | "headbar";
 
 export const USP_LAYOUTS: readonly UspLayout[] = [
   "split",
   "tiles",
   "checklist",
+  "checkline",
   "linebar",
   "sidepanel",
   "band",
@@ -86,6 +88,8 @@ export interface UspConfig {
   builder: boolean;
   /** Die kleine Zeile über der Überschrift, z. B. „Kundennutzen“. */
   eyebrow?: string;
+  /** Zeichen über der Überschrift (Name aus `MAN_ICONS`); zeigt nur `checkline`. */
+  headIcon?: string;
   heading: string;
   items: UspItem[];
 }
@@ -154,6 +158,8 @@ export function parseConfigJson(json: string, options: ParseOptions = {}): UspCo
 
   const eyebrow = asText(parsed.eyebrow);
   if (eyebrow !== "") config.eyebrow = eyebrow;
+  const headIcon = asText(parsed.headIcon);
+  if (findManIcon(headIcon) !== undefined) config.headIcon = headIcon;
   config.heading = asText(parsed.heading);
 
   const items = Array.isArray(parsed.items) ? parsed.items : [];
@@ -190,6 +196,7 @@ export function serializeConfigJson(config: UspConfig): string {
   if (!config.showIcons) out.showIcons = false;
   if (config.builder) out.builder = true;
   if (config.eyebrow !== undefined && config.eyebrow.trim() !== "") out.eyebrow = config.eyebrow;
+  if (config.headIcon !== undefined) out.headIcon = config.headIcon;
   out.heading = config.heading;
   out.items = config.items.map((item) => {
     const entry: Record<string, unknown> = { id: item.id, title: item.title };

@@ -19,6 +19,7 @@ export const LAYOUT_LABELS: Record<UspLayout, { title: string; hint: string }> =
   split: { title: "Zweispaltig", hint: "Frage links, Antworten rechts untereinander" },
   tiles: { title: "Kacheln", hint: "Je Punkt eine Kachel mit Akzentkante" },
   checklist: { title: "Häkchen auf Fläche", hint: "Getönte Fläche, Häkchen in Akzentfarbe" },
+  checkline: { title: "Häkchen mit Kopflinie", hint: "Akzentlinie oben, Zeichen über der Frage, Häkchenliste ohne Fläche" },
   linebar: { title: "Linienleiste", hint: "Titel mit Akzentlinie, Punkte in einer Zeile" },
   sidepanel: { title: "Farbspalte", hint: "Frage auf Farbfläche, Antworten rechts" },
   band: { title: "Farbband", hint: "Titel als Farbband, Punkte darunter nebeneinander" },

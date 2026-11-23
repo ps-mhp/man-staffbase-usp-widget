@@ -7,9 +7,9 @@ einem Symbol aus der MAN-Symbolschrift.
 
 ## Was Leser:innen sehen
 
-Je nach gewählter **Gestaltung** eine von sieben Formen: zweispaltig, Kacheln,
-Häkchen auf Fläche, Linienleiste, Farbspalte, Farbband oder Fragekopf mit
-Leiste. Die **Akzentfarbe** (Rot, Grau oder Blau) färbt Linien, Flächen und
+Je nach gewählter **Gestaltung** eine von acht Formen: zweispaltig, Kacheln,
+Häkchen auf Fläche, Häkchen mit Kopflinie, Linienleiste, Farbspalte, Farbband
+oder Fragekopf mit Leiste. Die **Akzentfarbe** (Rot, Grau oder Blau) färbt Linien, Flächen und
 Symbole. Auf dem Telefon stapeln sich alle Gestaltungen zu einer Spalte.
 
 Ohne Punkte erscheint die Box nicht.

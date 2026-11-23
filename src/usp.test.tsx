@@ -67,6 +67,27 @@ describe("UspBox", () => {
   });
 });
 
+describe("UspBox – Häkchen mit Kopflinie", () => {
+  it("zeigt das Zeichen über der Frage und Häkchen vor den Punkten", () => {
+    const { container } = render(<UspBox config={config({ layout: "checkline", headIcon: "usermanagement" })} />);
+    const box = container.querySelector(".man-usp")!;
+    expect(box).toHaveClass("man-usp--checkline");
+    const head = box.querySelector(".man-usp__head")!;
+    expect(head.firstElementChild).toHaveClass("man-usp__head-mark");
+    expect(head.querySelector(".man-usp__head-mark")).toHaveAttribute("aria-hidden", "true");
+    // Jeder Punkt trägt ein Zeichen, der ohne eigenes das Häkchen.
+    expect(box.querySelectorAll(".man-usp__item .man-usp__mark")).toHaveLength(2);
+  });
+
+  it("blendet das Zeichen über der Frage mit „Icons aus“ und in anderen Gestaltungen aus", () => {
+    const off = render(<UspBox config={config({ layout: "checkline", headIcon: "usermanagement", showIcons: false })} />);
+    expect(off.container.querySelector(".man-usp__head-mark")).toBeNull();
+    off.unmount();
+    const other = render(<UspBox config={config({ layout: "checklist", headIcon: "usermanagement" })} />);
+    expect(other.container.querySelector(".man-usp__head-mark")).toBeNull();
+  });
+});
+
 describe("itemIconName", () => {
   const item = { id: "a", title: "X" };
 
@@ -76,6 +97,11 @@ describe("itemIconName", () => {
     expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checklist", showIcons: false }))).toBe(
       "checkmark",
     );
+  });
+
+  it("setzt auch bei „Häkchen mit Kopflinie“ immer ein Zeichen", () => {
+    expect(itemIconName(item, config({ layout: "checkline" }))).toBe("checkmark");
+    expect(itemIconName({ ...item, icon: "truck" }, config({ layout: "checkline", showIcons: false }))).toBe("checkmark");
   });
 
   it("zeigt sonst nur gewählte Zeichen", () => {
