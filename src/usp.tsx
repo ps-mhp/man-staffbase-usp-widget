@@ -23,6 +23,7 @@
 
 import React, { useEffect } from "react";
 
+import { sanitizeSimpleRichText } from "@man/config-ui/rich-text/simple-rich-text";
 import { useHotStyle } from "@shared/hot-style";
 import { ensureIconFontFace } from "./icon-font";
 import { findManIcon, manIconGlyph } from "./man-icons";
@@ -67,6 +68,16 @@ function ItemMark({ name }: { name: string | undefined }): React.ReactElement | 
   );
 }
 
+/**
+ * Die Erläuterung: Fließtext mit Absätzen, Zeilenumbrüchen und Aufzählungen
+ * (`sanitizeSimpleRichText`, auch für Texte älterer Fassungen ohne Markup).
+ */
+function ItemText({ text }: { text: string }): React.ReactElement | null {
+  const html = sanitizeSimpleRichText(text);
+  if (html === "") return null;
+  return <div className="man-usp__text" dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 export interface UspBoxProps {
   config: UspConfig;
 }
@@ -109,7 +120,7 @@ export function UspBox({ config }: UspBoxProps): React.ReactElement | null {
             <ItemMark name={itemIconName(item, config)} />
             <span className="man-usp__point">
               {item.title !== "" && <strong className="man-usp__title">{item.title}</strong>}
-              {item.text !== undefined && <span className="man-usp__text">{item.text}</span>}
+              {item.text !== undefined && <ItemText text={item.text} />}
             </span>
           </li>
         ))}

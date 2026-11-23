@@ -148,9 +148,13 @@ describe("UspEditor", () => {
 
     await userEvent.click(screen.getByRole("button", { name: /Neuer Punkt/ }));
     fireEvent.change(screen.getByTestId("usp-item-0-title"), { target: { value: "Aerodynamik" } });
-    fireEvent.change(screen.getByTestId("usp-item-0-text"), { target: { value: "Verbessert" } });
+    const text = screen.getByTestId("usp-item-0-text");
+    text.innerHTML = "Verbessert<ul><li>leiser</li><li>sparsamer</li></ul>";
+    fireEvent.input(text);
 
-    expect(h.latest().items).toEqual([{ id: expect.any(String), title: "Aerodynamik", text: "Verbessert" }]);
+    expect(h.latest().items).toEqual([
+      { id: expect.any(String), title: "Aerodynamik", text: "<p>Verbessert</p><ul><li>leiser</li><li>sparsamer</li></ul>" },
+    ]);
   });
 
   it("sperrt „Neuer Punkt“ bei acht Punkten", () => {
@@ -175,7 +179,9 @@ describe("UspEditor", () => {
 
   it("entfernt eine geleerte Erläuterung aus dem Punkt", () => {
     const h = setup({ ...emptyConfig(), items: [{ id: "a", title: "Eins", text: "Text" }] });
-    fireEvent.change(screen.getByTestId("usp-item-0-text"), { target: { value: "" } });
+    const text = screen.getByTestId("usp-item-0-text");
+    text.innerHTML = "<br>";
+    fireEvent.input(text);
     expect(h.latest().items[0]).toEqual({ id: "a", title: "Eins" });
   });
 

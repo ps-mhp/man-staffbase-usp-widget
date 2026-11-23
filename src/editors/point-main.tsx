@@ -22,7 +22,7 @@ import { ReactElement } from "react";
 import { Field } from "@man/config-ui/form/field";
 import { FormSection } from "@man/config-ui/form/form-section";
 import { Input } from "@man/config-ui/primitives/input";
-import { Textarea } from "@man/config-ui/primitives/textarea";
+import { RichTextField } from "@man/config-ui/rich-text/rich-text-field";
 import { ItemActions } from "@man/config-ui/sidebar/item-actions";
 
 import { UspItem } from "../usp-model";
@@ -96,16 +96,14 @@ export function PointMain({
               onChange={(event) => onChange({ ...item, title: event.target.value })}
             />
           </Field>
-          <Field label="Erläuterung" hint="Optional, steht unter dem Stichwort.">
-            <Textarea
-              rows={2}
+          <Field label="Erläuterung" hint="Optional, steht unter dem Stichwort. Aufzählung über den Knopf oder „- “ am Zeilenanfang; Umschalt+Enter beginnt eine neue Zeile.">
+            <RichTextField
+              // Je Punkt ein eigenes Feld: der Inhalt gehört nicht zum nächsten Punkt.
+              key={item.id}
               data-testid={`${testId}-text`}
               value={item.text ?? ""}
               placeholder="z. B. Verbessert"
-              onChange={(event) => {
-                const text = event.target.value;
-                onChange(text === "" ? withoutKey(item, "text") : { ...item, text });
-              }}
+              onChange={(text) => onChange(text === "" ? withoutKey(item, "text") : { ...item, text })}
             />
           </Field>
         </FormSection>

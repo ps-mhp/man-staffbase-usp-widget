@@ -9,4 +9,4 @@
 | Zeile darüber (Reiter „Inhalt“) | Optional, eine kurze Zeile über der Überschrift. |
 | Zeichen über der Überschrift (Reiter „Inhalt“) | Nur bei „Häkchen mit Kopflinie“: ein MAN-Icon in Akzentfarbe über der Frage. Optional. |
 | Überschrift (Reiter „Inhalt“) | Die Frage oder der Titel der Box. |
-| Punkte (Liste links) | Bis zu acht. Je Punkt **Stichwort**, optional **Erläuterung** und **Icon**. Ein Punkt ohne Text wird nicht gezeigt. |
+| Punkte (Liste links) | Bis zu acht. Je Punkt **Stichwort**, optional **Erläuterung** und **Icon**. Die Erläuterung kann Absätze, Zeilenumbrüche (Umschalt+Enter) und Aufzählungen enthalten (Knopf „Aufzählung“ oder „- “ am Zeilenanfang). Ein Punkt ohne Text wird nicht gezeigt. |

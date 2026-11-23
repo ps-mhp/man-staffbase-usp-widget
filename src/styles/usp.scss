@@ -163,6 +163,36 @@ $accents: (
     font-weight: 400 !important;
     line-height: 1.4 !important;
     color: var(--usp-text-color) !important;
+
+    // Absätze und Aufzählungen der Erläuterung (Mini-Editor im Studio).
+    p,
+    ul,
+    li {
+      margin: 0 !important;
+      font: inherit !important;
+      color: inherit !important;
+    }
+
+    p + p,
+    p + ul,
+    ul + p {
+      margin-top: man("space-1") !important;
+    }
+
+    ul {
+      padding: 0 0 0 1.2em !important;
+      list-style: disc outside !important;
+    }
+
+    li {
+      display: list-item !important;
+      padding: 0 !important;
+      list-style: inherit !important;
+
+      &::before {
+        content: none !important;
+      }
+    }
   }
 }
 
@@ -269,6 +299,12 @@ $accents: (
   .man-usp__title + .man-usp__text::before {
     content: " ";
   }
+
+  // Der erste Absatz läuft mit dem Stichwort; Aufzählungen beginnen darunter.
+  .man-usp__text,
+  .man-usp__text > p:first-child {
+    display: inline;
+  }
 }
 
 // Häkchen mit Kopflinie: wie „Häkchen auf Fläche“, aber ohne Fläche – eine
@@ -306,6 +342,11 @@ $accents: (
 
   .man-usp__title + .man-usp__text::before {
     content: " ";
+  }
+
+  .man-usp__text,
+  .man-usp__text > p:first-child {
+    display: inline;
   }
 }
 

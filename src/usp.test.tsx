@@ -67,6 +67,21 @@ describe("UspBox", () => {
   });
 });
 
+describe("UspBox – Erläuterung mit Aufzählung", () => {
+  it("zeigt Absätze und Aufzählungspunkte, bereinigt", () => {
+    const { container } = render(
+      <UspBox config={config({ items: [{ id: "a", title: "Einsatz", text: "Kurz<ul><li>Transport</li><li onclick=\"x()\">Wendigkeit</li></ul>" }] })} />,
+    );
+    const text = container.querySelector(".man-usp__text")!;
+    expect(text.innerHTML).toBe("<p>Kurz</p><ul><li>Transport</li><li>Wendigkeit</li></ul>");
+  });
+
+  it("zeigt reinen Text älterer Fassungen wie bisher, Zeilen getrennt", () => {
+    const { container } = render(<UspBox config={config({ items: [{ id: "a", title: "X", text: "Eins\nZwei" }] })} />);
+    expect(container.querySelector(".man-usp__text")!.innerHTML).toBe("<p>Eins<br>Zwei</p>");
+  });
+});
+
 describe("UspBox – Häkchen mit Kopflinie", () => {
   it("zeigt das Zeichen über der Frage und Häkchen vor den Punkten", () => {
     const { container } = render(<UspBox config={config({ layout: "checkline", headIcon: "usermanagement" })} />);

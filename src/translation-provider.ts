@@ -20,6 +20,7 @@
  * Gestaltung, Farbe, Symbole und Reihenfolge bleiben Zeichen für Zeichen.
  */
 
+import { sanitizeSimpleRichText } from "@man/config-ui/rich-text/simple-rich-text";
 import { TranslationProvider } from "@shared/translation/carriers";
 
 import { CONFIG_ATTRIBUTE } from "./configuration-schema";
@@ -33,7 +34,8 @@ const escapeHtml = (text: string): string =>
 
 interface Field {
   key: string;
-  tag: "h2" | "p";
+  /** `div`: Erläuterung mit Absätzen und Aufzählungen, geht als Markup hin und zurück. */
+  tag: "h2" | "p" | "div";
   text: string;
 }
 
@@ -47,7 +49,7 @@ export function configFields(config: UspConfig): Field[] {
   add("heading", "h2", config.heading);
   config.items.forEach((item, index) => {
     add(`${index}.title`, "p", item.title);
-    add(`${index}.text`, "p", item.text);
+    add(`${index}.text`, "div", item.text === undefined ? undefined : sanitizeSimpleRichText(item.text));
   });
   return fields;
 }
@@ -57,7 +59,9 @@ export function readTranslatedFields(html: string): Map<string, string> {
   const doc = new DOMParser().parseFromString(`<body>${html}</body>`, "text/html");
   doc.body.querySelectorAll(`[${FIELD_ATTRIBUTE}]`).forEach((element) => {
     const key = element.getAttribute(FIELD_ATTRIBUTE);
-    if (key !== null && !fields.has(key)) fields.set(key, element.textContent ?? "");
+    if (key === null || fields.has(key)) return;
+    // Die Erläuterung kommt als Markup zurück und wird wieder bereinigt.
+    fields.set(key, element.tagName === "DIV" ? sanitizeSimpleRichText(element.innerHTML) : (element.textContent ?? ""));
   });
   return fields;
 }
@@ -90,7 +94,7 @@ export const uspTranslationProvider: TranslationProvider = {
     const fields = configFields(parseConfig(stored));
     if (fields.length === 0) return null;
     const nodes = fields
-      .map(({ key, tag, text }) => `<${tag} ${FIELD_ATTRIBUTE}="${key}">${escapeHtml(text)}</${tag}>`)
+      .map(({ key, tag, text }) => `<${tag} ${FIELD_ATTRIBUTE}="${key}">${tag === "div" ? text : escapeHtml(text)}</${tag}>`)
       .join("");
     return `<div>${nodes}</div>`;
   },
