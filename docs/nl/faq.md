@@ -2,14 +2,14 @@
 
 **Vraag:** Het vakje verschijnt niet op de pagina.
 
-Antwoord: Er moet minstens één punt met een trefwoord of toelichting in staan.
+Antwoord: Er moet ten minste één punt met een trefwoord of toelichting in staan.
 Een kopje alleen wordt niet weergegeven.
 
-**Vraag:** In plaats van een symbool staat er een leeg vakje.
+**Vraag:** Er ontbreekt een symbool, terwijl er wel een is geselecteerd.
 
-Antwoord: Het MAN-symboollettertype is afkomstig uit het thema van de instantie; het kader
-neemt een kopie mee als het ontbreekt. Laad de pagina opnieuw. Blijft het vakje staan,
-meld dit dan met vermelding van de pagina en de symboolnaam.
+Antwoord: De afbeeldingen van de symbolen worden kort na de tekst in het vak geladen.
+Laad de pagina opnieuw. Als het symbool nog steeds ontbreekt, meld dit dan met vermelding van de pagina en
+de naam van het symbool.
 
 **Vraag:** Ik heb in de Builder een ontwerp gekozen, maar na het opnieuw laden is
 het verdwenen.
@@ -20,5 +20,5 @@ het ontwerp en de kleur.
 
 **Vraag:** Worden de teksten ook vertaald?
 
-Antwoord: Ja. De kop, de regel erboven, de trefwoorden en de toelichtingen worden
+Antwoord: Ja. Kop, regel erboven, trefwoorden en toelichtingen worden
 meegenomen in de inhoudsvertaling; opmaak, kleur en symbolen blijven hetzelfde.

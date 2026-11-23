@@ -2,17 +2,18 @@
 
 The USP Box summarizes the benefits of a product or offer in a few points:
 a question such as “What’s in it for the customer?” and below or next to it
-the answers, each as a keyword with a brief explanation and, if desired,
-an icon from the MAN icon set.
+the answers, each as a keyword with a brief explanation and, if desired, with
+an icon from the icon library (Craft Icons, MAN Symbol Font, and
+basic shapes).
 
 ## What Readers See
 
-Depending on the chosen **design**, one of eight formats: two-column, tiles,
-checkmarks on a background, checkmarks with a header line, line bar, color column, color band,
+Depending on the selected **design**, one of eight formats: two-column, tiles,
+checkmarks on a background, checkmarks with a header line, line bar, color column, color strip,
 or question header with a bar. The **accent color** (red, gray, or blue) colors lines, areas, and
-symbols. On a phone, all layouts are stacked into a single column.
+symbols. On a phone, all layouts stack into a single column.
 
-The box does not appear without points.
+The box does not appear without dots.
 
 In **Builder Mode**, a bar appears above the box with layout, color, and
 icons. Readers can use it to switch settings themselves and see the result immediately—

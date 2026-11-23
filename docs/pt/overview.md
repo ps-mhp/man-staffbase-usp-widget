@@ -2,15 +2,16 @@
 
 A Caixa USP resume as vantagens de um produto ou oferta em poucos pontos:
 uma pergunta do tipo «O que é que isto traz ao cliente?» e, por baixo ou ao lado,
-as respostas, cada uma como palavra-chave com uma breve explicação e, se desejado, com
-um símbolo do conjunto de símbolos da MAN.
+as respostas, cada uma sob a forma de palavra-chave com uma breve explicação e, se desejado, com
+um símbolo da biblioteca de ícones (Craft-Icons, MAN-Symbolschrift e
+formas básicas).
 
 ## O que os leitores veem
 
 Dependendo do **design** escolhido, uma de oito formas: duas colunas, mosaicos,
 marcas de verificação numa área, marcas de verificação com linha superior, barra de linhas, coluna colorida, faixa colorida
 ou título da pergunta com barra. A **cor de destaque** (vermelho, cinzento ou azul) dá cor às linhas, áreas e
-símbolos. No telemóvel, todos os layouts são empilhados numa única coluna.
+símbolos. No telemóvel, todos os designs são empilhados numa única coluna.
 
 Sem pontos, a caixa não aparece.
 

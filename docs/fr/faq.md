@@ -1,22 +1,22 @@
 # FAQ
 
-**Question :** La boîte n'apparaît pas sur la page.
+**Question :** L'encadré n'apparaît pas sur la page.
 
-Réponse : Elle nécessite au moins un élément contenant un mot-clé ou une explication.
+Réponse : Il faut au moins un élément contenant un mot-clé ou une explication.
 Un titre seul n'est pas affiché.
 
-**Question :** À la place d'une icône, il y a une case vide.
+**Question :** Une icône manque alors qu'une a été sélectionnée.
 
-Réponse : La police des icônes MAN provient du thème de l'instance ; l'encadré en
-apporte une copie si elle vient à manquer. Actualisez la page. Si la case vide persiste,
-signalez-le en indiquant la page et le nom de l'icône.
+Réponse : Les illustrations des icônes sont chargées par l'encadré peu après le texte.
+Actualisez la page. Si l'icône est toujours manquante, signalez-le en indiquant la page et
+le nom de l'icône.
 
-**Question :** J’ai choisi une mise en page dans le Builder, mais après le rafraîchissement,
-elle a disparu.
+**Question :** J'ai choisi un thème dans le Builder, mais après avoir actualisé la page,
+il a disparu.
 
 Réponse : Le Builder est un aperçu destiné aux lecteurs et ne sauvegarde rien.
-Pour modifier définitivement la mise en page de la boîte, ouvrez-la dans l’éditeur et sélectionnez-y
-la mise en page et la couleur.
+Pour modifier définitivement la boîte, ouvrez-la dans l’éditeur et sélectionnez-y
+le thème et la couleur.
 
 **Question :** Les textes sont-ils également traduits ?
 

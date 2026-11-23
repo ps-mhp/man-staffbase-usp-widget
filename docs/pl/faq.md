@@ -2,20 +2,20 @@
 
 **Pytanie:** Ramka nie wyświetla się na stronie.
 
-Odpowiedź: Potrzebny jest co najmniej jeden punkt zawierający słowo kluczowe lub wyjaśnienie.
+Odpowiedź: Musi zawierać co najmniej jeden punkt z hasłem lub objaśnieniem.
 Sam nagłówek nie jest wyświetlany.
 
-**Pytanie:** Zamiast symbolu pojawia się puste pole.
+**Pytanie:** Brakuje symbolu, mimo że został wybrany.
 
-Odpowiedź: Czcionka symboli MAN pochodzi z motywu instancji; ramka zawiera
-jej kopię na wypadek, gdyby jej brakowało. Odśwież stronę. Jeśli puste pole nadal się pojawia,
-zgłoś to, podając adres strony i nazwę symbolu.
+Odpowiedź: Grafiki symboli są ładowane przez ramkę tuż po tekście.
+Odśwież stronę. Jeśli symbol nadal nie jest widoczny, zgłoś to, podając adres strony i
+nazwę symbolu.
 
-**Pytanie:** Wybrałem w Builderze układ, ale po ponownym załadowaniu
+**Pytanie:** Wybrałem układ w kreatorze, ale po odświeżeniu strony
 zniknął.
 
-Odpowiedź: Builder służy jako podgląd dla czytelników i nie zapisuje żadnych zmian.
-Aby trwale zmienić wygląd pola, otwórz je w edytorze i wybierz tam
+Odpowiedź: Kreator służy jako podgląd dla czytelników i nie zapisuje żadnych zmian.
+Aby trwale zmienić wygląd ramki, otwórz ją w edytorze i wybierz tam
 układ oraz kolor.
 
 **Pytanie:** Czy teksty są również tłumaczone?

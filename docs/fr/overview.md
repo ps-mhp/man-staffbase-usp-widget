@@ -2,20 +2,21 @@
 
 L'encadré USP résume les avantages d'un produit ou d'une offre en quelques points
 : une question telle que « Quels sont les avantages pour le client ? » et, en dessous ou à côté,
-les réponses, sous forme de mots-clés accompagnés d'une brève explication et, si souhaité, d'
-un symbole issu de la bibliothèque de symboles MAN.
+les réponses, sous forme de mots-clés accompagnés d’une brève explication et, si souhaité, d’
+un symbole issu de la bibliothèque d’icônes (Craft-Icons, police de symboles MAN et
+formes de base).
 
 ## Ce que voient les lecteurs et lectrices
 
 Selon la **mise en page** choisie, l’une des huit formes suivantes : deux colonnes, des vignettes,
 des coches sur une surface, des coches avec une ligne en haut, une barre de lignes, une colonne de couleur, une bande de couleur
-ou un titre de question avec une barre. La **couleur d’accent** (rouge, gris ou bleu) colore les lignes, les surfaces et
-les symboles. Sur le téléphone, toutes les mises en page s’empilent pour former une seule colonne.
+ou un en-tête de question avec une barre. La **couleur d’accent** (rouge, gris ou bleu) colore les lignes, les surfaces et
+les icônes. Sur le téléphone, toutes les mises en page s’empilent pour former une seule colonne.
 
 Sans points, la boîte n’apparaît pas.
 
 En **mode Builder**, une barre situées au-dessus de la boîte permet de choisir la mise en page, la couleur et
-les icônes. Les lecteurs peuvent ainsi changer eux-mêmes les paramètres et voir immédiatement le résultat —
+les symboles. Les lecteurs peuvent ainsi changer eux-mêmes les paramètres et voir immédiatement le résultat —
 conçu pour les pages où la boîte est présentée ou personnalisée.
 Rien n’est enregistré.
 

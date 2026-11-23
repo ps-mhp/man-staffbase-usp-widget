@@ -1,18 +1,19 @@
-# Ramka USP
+# USP-Box
 
-Pole USP podsumowuje zalety produktu lub oferty w kilku punktach:
-pytanie typu „Co zyskuje klient?” oraz poniżej lub obok
-odpowiedzi, każda w formie hasła z krótkim wyjaśnieniem i, na życzenie, z
-symbolem z zestawu symboli MAN.
+USP-Box podsumowuje zalety produktu lub oferty w kilku punktach:
+pytanie typu „Co z tego ma klient?” a poniżej lub obok
+odpowiedzi, każda w formie hasła z krótkim wyjaśnieniem oraz, na życzenie, z
+symbolem z biblioteki ikon (Craft-Icons, pisma symbolowego MAN i
+kształtów podstawowych).
 
 ## Co widzą czytelnicy
 
 W zależności od wybranego **układu** jeden z ośmiu formatów: dwukolumnowy, kafelki,
-haczyki na tle, haczyki z linią nagłówkową, pasek liniowy, kolumna kolorowa, pasek kolorowy
+haczyki na tle, haczyki z linią górną, pasek liniowy, kolumna kolorowa, pasek kolorowy
 lub nagłówek z pytaniem i paskiem. **Kolor akcentujący** (czerwony, szary lub niebieski) nadaje barwę liniom, polom i
-symbolom. Na telefonie wszystkie układy są ułożone w jedną kolumnę.
+symbolom. Na telefonie wszystkie układy układają się w jedną kolumnę.
 
-Bez zaznaczenia pól wyboru okienko nie pojawia się.
+Bez zaznaczenia pola nie zostanie wyświetlone.
 
 W **trybie kreatora** nad polem znajduje się pasek z opcjami układu, koloru i
 symboli. Czytelnicy mogą samodzielnie przełączać między opcjami i natychmiast widzą wynik —

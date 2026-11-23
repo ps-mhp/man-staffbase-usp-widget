@@ -1,16 +1,17 @@
-# USP-box
+# USP-Box
 
-De USP-box vat de voordelen van een product of aanbod in enkele punten
-samen: een vraag als „Wat levert het de klant op?“ en daaronder of ernaast
+De USP-Box vat de voordelen van een product of aanbod in enkele punten samen:
+een vraag als „Wat levert het de klant op?“ en daaronder of ernaast
 de antwoorden, telkens als trefwoord met een korte toelichting en desgewenst met
-een symbool uit het MAN-symboollettertype.
+een symbool uit de iconenbibliotheek (Craft-iconen, MAN-symboolschrift en
+basisvormen).
 
 ## Wat lezers zien
 
 Afhankelijk van de gekozen **opmaak** een van de acht vormen: tweekoloms, tegels,
 vinkjes op een vlak, vinkjes met een kopregel, lijnbalk, kleurkolom, kleurband
 of vraagkop met balk. De **accentkleur** (rood, grijs of blauw) kleurt lijnen, vlakken en
-symbolen. Op de telefoon worden alle lay-outs in één kolom weergegeven.
+symbolen. Op de telefoon worden alle ontwerpen in één kolom gestapeld.
 
 Zonder punten wordt het vak niet weergegeven.
 

@@ -7,6 +7,6 @@
 | Pokaż ikony (zakładka „Wygląd”) | Włączone (domyślnie). Wyłączone — ukrywa wszystkie ikony; listy z zaznaczeniami wyświetlają wówczas wszędzie zaznaczenie, a opcja „Zaznaczenie z linią nagłówkową” nie wyświetla znaku nad pytaniem. |
 | Tryb kreatora (zakładka „Zachowanie”) | Wyłączony (ustawienie domyślne). Włączone powoduje wyświetlenie paska nad polem, za pomocą którego czytelnicy mogą samodzielnie zmieniać układ, kolor i ikony oraz natychmiast zobaczyć wynik. Wybór dotyczy tylko ich własnego widoku i nie jest zapisywany; opcja „Resetuj” przywraca ustawioną wersję. |
 | Wiersz powyżej (zakładka „Treść”) | Opcjonalnie, krótki wiersz nad nagłówkiem. |
-| Symbol nad nagłówkiem (zakładka „Treść”) | Tylko w przypadku opcji „Zaznaczenie z linią nagłówkową”: ikona MAN w kolorze akcentującym nad pytaniem. Opcjonalnie. |
+| Symbol nad nagłówkiem (zakładka „Treść”) | Tylko w przypadku opcji „Zaznaczenie z linią nagłówkową”: ikona z biblioteki ikon w kolorze akcentującym nad pytaniem. Opcjonalnie. |
 | Nagłówek (zakładka „Treść”) | Pytanie lub tytuł ramki. |
-| Punkty (lista po lewej) | Maksymalnie osiem. W każdym punkcie **słowo kluczowe**, opcjonalnie **objaśnienie** i **ikona**. Wyjaśnienie może zawierać akapity, znaki końca linii (Shift+Enter) oraz wypunktowania (przycisk „Wypunktowanie” lub „- ” na początku wiersza). Punkt bez tekstu nie jest wyświetlany. |
+| Punkty (lista po lewej) | Maksymalnie osiem. Dla każdego punktu **słowo kluczowe**, opcjonalnie **objaśnienie** i **ikona**. Wyjaśnienie może zawierać akapity, przełamania wierszy (Shift+Enter) oraz wypunktowania (przycisk „Wypunktowanie” lub znak „- ” na początku wiersza). Punkt bez tekstu nie jest wyświetlany. |

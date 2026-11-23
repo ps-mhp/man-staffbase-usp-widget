@@ -5,18 +5,18 @@
 Resposta: É necessário, pelo menos, um ponto com uma palavra-chave ou explicação.
 Um título, por si só, não é apresentado.
 
-**Pergunta:** Em vez de um símbolo, aparece uma caixa vazia.
+**Pergunta:** Falta um símbolo, apesar de ter sido selecionado.
 
-Resposta: A fonte dos símbolos MAN provém do tema da instância; a caixa traz
-uma cópia, caso esta falte. Atualize a página. Se a caixa permanecer,
-comunique o problema indicando a página e o nome do símbolo.
+Resposta: Os desenhos dos símbolos são carregados pela caixa logo a seguir ao texto.
+Atualize a página. Se o símbolo continuar a faltar, comunique-o indicando a página e
+o nome do símbolo.
 
-**Pergunta:** Escolhi um estilo no Builder, mas após recarregar a página,
+**Pergunta:** Escolhi um design no Construtor, mas após a atualização
 este desapareceu.
 
 Resposta: O Builder é uma pré-visualização para os leitores e não guarda nada.
-Para alterar o estilo da caixa de forma permanente, abra-a no Editor e selecione lá
-o estilo e a cor.
+Para alterar a caixa de forma permanente, abra-a no Editor e selecione aí
+o design e a cor.
 
 **Pergunta:** Os textos também são traduzidos?
 

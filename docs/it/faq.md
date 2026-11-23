@@ -1,22 +1,22 @@
-# FAQ
+# Domande frequenti
 
-**Domanda:** Il riquadro non compare sulla pagina.
+**Domanda:** Il riquadro non viene visualizzato sulla pagina.
 
 Risposta: È necessario inserire almeno un punto con una parola chiave o una spiegazione.
 Un titolo da solo non viene visualizzato.
 
-**Domanda:** Al posto di un simbolo compare un riquadro vuoto.
+**Domanda:** Manca un simbolo, nonostante ne sia stato selezionato uno.
 
-Risposta: Il font dei simboli MAN proviene dal tema dell’istanza; il riquadro ne
-include una copia nel caso in cui manchi. Aggiorna la pagina. Se il riquadro vuoto persiste,
-segnalalo indicando la pagina e il nome del simbolo.
+Risposta: Le immagini delle icone vengono caricate dal riquadro poco dopo il testo.
+Aggiorna la pagina. Se l’icona continua a mancare, segnalalo indicando la pagina e
+il nome dell’icona.
 
-**Domanda:** Ho scelto un tema nel Builder, ma dopo aver ricaricato la pagina
-è scomparso.
+**Domanda:** Ho scelto un tema nel Builder, ma dopo l’aggiornamento
+è sparito.
 
 Risposta: Il Builder è un’anteprima per i lettori e non salva nulla.
-Per modificare definitivamente il riquadro, apritelo nell’editor e selezionate lì
-il tema e il colore.
+Per modificare il riquadro in modo permanente, apritelo nell’Editor e selezionate lì
+il layout e il colore.
 
 **Domanda:** Anche i testi vengono tradotti?
 
