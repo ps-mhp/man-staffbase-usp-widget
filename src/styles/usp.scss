@@ -214,6 +214,24 @@ $accents: (
   }
 }
 
+// Im Kasten vor dem Punkt steht das Icon allein: ein Kästchen in Icon-Größe,
+// ohne das Geviert, das im Fließtext Unter- und Durchstreichung trägt.
+.man-usp__mark .man-usp__icon {
+  @include man-outshine-host {
+    display: block !important;
+    line-height: 0 !important;
+  }
+
+  &::before {
+    margin-right: 0;
+    vertical-align: top;
+  }
+
+  &::after {
+    content: none;
+  }
+}
+
 // --- Gestaltungen ---------------------------------------------------------------
 
 // Zweispaltig: Frage links, Antworten rechts untereinander mit Haarlinien.
